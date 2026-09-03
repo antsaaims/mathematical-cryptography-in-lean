@@ -1,23 +1,14 @@
 {
-  "forwardPorts": [3000],
+  "name": "Lean 4 & Mathlib Environment",
   "image": "mcr.microsoft.com/devcontainers/base:ubuntu-22.04",
-  "features": {
-    "ghcr.io/devcontainers/features/node:1": { "version": "18" },
-    "ghcr.io/devcontainers/features/python:1": { "version": "3" }
-  },
-  "onCreateCommand": "bash .devcontainer/setup.sh",
-  "postCreateCommand": "bash .devcontainer/run-server.sh",
   "customizations": {
     "vscode": {
-      "settings": {
-        "remote.autoForwardPorts": false
-      },
       "extensions": [
         "leanprover.lean4"
       ]
-    },
-    "codespaces": {
-      "openFiles": ["Game.lean"]
     }
-  }
+  },
+  "onCreateCommand": "bash .devcontainer/setup.sh",
+  "postCreateCommand": "lake exe cache get",
+  "remoteUser": "vscode"
 }

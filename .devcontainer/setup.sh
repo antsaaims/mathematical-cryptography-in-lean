@@ -1,21 +1,16 @@
-#!/bin/bash
-set -e
+#!/usr/bin/env bash
+set -euo pipefail
 
-# Install Lean4
-export LEAN_VERSION="$(cat lean-toolchain)"
-echo "LEAN_VERSION is: $LEAN_VERSION"
-curl https://elan.lean-lang.org/elan-init.sh -sSf | sh -s -- -y --default-toolchain $LEAN_VERSION
-echo 'export PATH="$HOME/.elan/bin:$PATH"' >> ~/.bashrc
+# 1. Install elan non-interactively
+if ! command -v elan &> /dev/null; then
+    curl https://raw.githubusercontent.com/leanprover/elan/master/elan-init.sh -sSf | sh -s -- -y --default-toolchain none
+fi
+
+# Ensure elan is available in PATH for current script execution
 export PATH="$HOME/.elan/bin:$PATH"
 
-# Build the game (uses cached manifest, downloads Mathlib build cache)
-lake build
-
-# Install lean4game
-export VITE_LEAN4GAME_SINGLE=true
-export VITE_LEAN4GAME_SINGLE_NAME=$(basename "$PWD")
-cd ..
-git clone https://github.com/leanprover-community/lean4game.git
-cd lean4game
-npm install
-npm run build
+# 2. Fetch toolchain binary specified in lean-toolchain
+if [ -f "lean-toolchain" ]; then
+    elan toolchain install "$(cat lean-toolchain)"
+    elan default "$(cat lean-toolchain)"
+fi

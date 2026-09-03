@@ -1,34 +1,62 @@
-# Game Skeleton
+# Mathematical Cryptography in Lean
 
-This is a template for creating a game with [lean4game](https://github.com/leanprover-community/lean4game/). It contains a single Level plus the files needed for a local development setup.
+[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/antsaaims/mathematical-cryptography-in-lean)
 
-The documentation about how to use this template are at the [lean4game repository](https://github.com/leanprover-community/lean4game/):
+An interactive Lean 4 game that teaches mathematical cryptography concepts through guided proofs: matrix algebra, the UOV signature scheme, and minimum-rank problems.
 
-* [Creating a new game](https://github.com/leanprover-community/lean4game/blob/main/doc/create_game.md)
-  * [Updating an existing game](https://github.com/leanprover-community/lean4game/blob/main/doc/update_game.md)
-  * [Running a game locally](https://github.com/leanprover-community/lean4game/blob/main/doc/running_locally.md)
+Built with [lean4game](https://github.com/leanprover-community/lean4game/).
 
-## Quick start
+## How to Play
 
-- Log into GitHub and click the "Use this template" > "Create a new repository" button.
-- Once you've created your repo from this template, click the green "Code" button and
-  choose "Codespaces" > "Create codespace on main".
-- After a few minutes, your Codespace should be ready for you to work on. You will see a message by
-  Vite in your console that should look like the following:
+1. Launch a Codespace by clicking the badge above, or go to the repo green Code button, then Codespaces, then Create codespace on main.
+2. Wait for setup. The container automatically installs Lean 4, Mathlib, and the lean4game server. This takes about 5 to 10 minutes on first launch. Subsequent launches are faster due to caching.
+3. Open the game. Once setup finishes, a browser tab opens automatically at the forwarded port. If it does not, look in the Ports tab in VS Code and click the globe icon next to port 3000.
+4. Start proving. Work through the worlds: Tutorial, Matrix Algebra, UOV, then MinRank. Each world introduces tactics and definitions, then tests them in a capstone level.
 
-  ```
-  [relay] [nodemon] starting `node ./dist/src/index.js`
-  [client]
-  [client]   VITE v6.4.1  ready in 1278 ms
-  [client]
-  [client]   ➜  Local:   http://localhost:3000/
-  [client]   ➜  Network: http://10.0.14.235:3000/
-  [client] [vite-plugin-static-copy] Collected 13 items.
-  [relay] Server listening on 8080
-  [relay] API listening on undefined
-  [server] ⚠ [29/42] Replayed GameServer.Tactic.LetIntros
-  [server] warning: GameServer/Tactic/LetIntros.lean:28:34: `Lean.Expr.letFun?` has been deprecated: Use `Lean.Expr.isHave` instead
-  ```
+## How It Works
 
-  CTRL + Click on http://localhost:3000/, and you will be referred to the version of your game hosted
-  in the Codespace.
+| Component | Port | Description |
+|-----------|------|-------------|
+| Game Client | 3000 | Vite-served frontend, auto-opens in browser |
+| Relay Server | 8080 | Backend relay connecting client to Lean server |
+
+## For Developers
+
+### Project Structure
+
+- Game.lean - Game entry point and world definitions
+- Game/Levels/ - Individual levels organized by world (Tutorial, MatrixAlgebra, UOV, MinRank)
+- .devcontainer/ - Codespace configuration (Dockerfile, setup scripts, server launcher)
+- lakefile.lean - Lean package configuration with Mathlib dependency
+
+### Running Locally (without Codespaces)
+
+Prerequisites: Node.js 22+, elan, and lake.
+
+    # Install dependencies and build the game
+    lake build
+
+    # Clone and build lean4game
+    cd ..
+    git clone https://github.com/leanprover-community/lean4game.git
+    cd lean4game
+    npm install
+    npm run build
+
+    # Start the server
+    cd ../mathematical-cryptography-in-lean
+    export VITE_LEAN4GAME_SINGLE=true
+    export VITE_LEAN4GAME_SINGLE_NAME=mathematical-cryptography-in-lean
+    npm start --prefix ../lean4game
+
+Then open http://localhost:3000 in your browser.
+
+### Adding New Levels
+
+See the [lean4game documentation](https://github.com/leanprover-community/lean4game/blob/main/doc/create_game.md) for how to create new worlds and levels.
+
+## Documentation
+
+- [Creating a new game](https://github.com/leanprover-community/lean4game/blob/main/doc/create_game.md)
+- [Updating an existing game](https://github.com/leanprover-community/lean4game/blob/main/doc/update_game.md)
+- [Running a game locally](https://github.com/leanprover-community/lean4game/blob/main/doc/running_locally.md)
