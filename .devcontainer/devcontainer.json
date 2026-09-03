@@ -8,7 +8,11 @@
       ]
     }
   },
+  "containerUser": "vscode",
+  "remoteUser": "vscode",
+  "containerEnv": {
+    "HOME": "/home/vscode"
+  },
   "onCreateCommand": "bash .devcontainer/setup.sh",
-  "postCreateCommand": "lake exe cache get",
-  "remoteUser": "vscode"
+  "postCreateCommand": "lake exe cache get"
 }
