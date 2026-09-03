@@ -1,80 +1,1622 @@
 msgid ""
 msgstr "Project-Id-Version: Game v4.23.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-10-23\n"
+"POT-Creation-Date: 2026-09-02\n"
 "Last-Translator: \n"
 "Language-Team: none\n"
 "Language: en\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit"
 
-#: GameServer.RpcHandlers
-msgid "level completed with warnings… 🎭"
+#. §0: `Matrix.transpose_mul`
+#: Game.Levels.MatrixAlgebra.L04_Transpose
+msgid "Use §0. Type: exact Matrix.transpose_mul A B"
 msgstr ""
 
-#: Game.Levels.DemoWorld.L01_HelloWorld
-msgid "Hello World"
+#: Game.Levels.MatrixAlgebra.L06_Capstone
+msgid "Simplify A * 1 to A using Matrix.mul_one. Type: rw [Matrix.mul_one]"
 msgstr ""
 
-#: Game
-msgid "This text appears on the starting page where one selects the world/level to play.\n"
-"You can use **markdown**."
+#. §0: `A + B`
+#. §1: `Aᵀ + Bᵀ`
+#. §2: `Matrix.transpose_add`
+#: Game.Levels.MinRank.L06_LinearDependence
+msgid "## Manipulating Linear Combinations\n"
+"\n"
+"In MinRank attacks, we frequently manipulate expressions like\n"
+"M = Sum lambda_i M_i and need to relate properties of M to properties of\n"
+"M^T (its transpose).\n"
+"\n"
+"Key fact: rank(M) = rank(M^T), and\n"
+"(Sum lambda_i M_i)^T = Sum lambda_i M_i^T.\n"
+"\n"
+"### Your Task\n"
+"\n"
+"Prove that the transpose of §0 equals §1.\n"
+"\n"
+"### Strategy\n"
+"\n"
+"Use §2."
 msgstr ""
 
-#: GameServer.RpcHandlers
-msgid "level completed! 🎉"
+#. §0: `h`
+#: Game.Levels.Tutorial.L02_Exact
+msgid "Your hypothesis §0 is exactly the goal. Type: exact h"
 msgstr ""
 
-#: Game
-msgid "Hello World Game"
+#. §0: `y`
+#. §1: `4`
+#. §2: `g`
+#: Game.Levels.Tutorial.L01_Rewrite
+msgid "Now rewrite §0 to §1 using your hypothesis §2. Type: rw [g]"
 msgstr ""
 
-#. §0: `«{g}»`
-#: Game.Levels.DemoWorld.L01_HelloWorld
-msgid "You should use §0 now."
+#: Game.Levels.UOV.L01_LinearMap
+msgid "Linear Maps and Their Composition"
+msgstr ""
+
+#: Game.Levels.UOV.L05_PublicKey
+msgid "The Public Key as a Composition"
 msgstr ""
 
 #: GameServer.RpcHandlers
 msgid "intermediate goal solved! 🎉"
 msgstr ""
 
-#: Game
-msgid "You should use this game as a template for your own game and add your own levels."
+#. §0: `x`
+#. §1: `2`
+#. §2: `h`
+#: Game.Levels.Tutorial.L01_Rewrite
+msgid "Start by rewriting §0 to §1 using your hypothesis §2. Type: rw [h]"
 msgstr ""
 
-#: Game
-msgid "Here you can put additional information about the game. It is accessible\n"
-"from the starting through the drop-down menu.\n"
+#: Game.Levels.UOV.L03_Composition
+msgid "Composing Linear and Quadratic Maps"
+msgstr ""
+
+#: Game.Levels.MatrixAlgebra.L03_Rank
+msgid "Type: exact Matrix.det_mul A B"
+msgstr ""
+
+#. §0: `h`
+#: Game.Levels.MinRank.L02_DetZero
+msgid "Substitute c with 0 using §0. Type: rw [h]"
+msgstr ""
+
+#. §0: `A`
+#. §1: `A.det`
+#. §2: `Matrix.det A`
+#. §3: `det(A) = 0`
+#. §4: `A`
+#. §5: `det(A * B) = det(A) * det(B)`
+#. §6: `det(I) = 1`
+#. §7: `Matrix.det`
+#. §8: `Matrix (Fin n) (Fin n) F`
+#. §9: `1`
+#. §10: `Matrix.det_one`
+#. §11: `det(1) = 1`
+#. §12: `exact`
+#. §13: `det(I) = 1`
+#: Game.Levels.MatrixAlgebra.L02_Det
+msgid "## Determinants\n"
 "\n"
-"For example: Game version, Credits, Link to Github and Zulip, etc.\n"
+"The **determinant** of a square matrix §0, written §1 (or §2),\n"
+"is a scalar that encodes key geometric properties:\n"
 "\n"
-"Use **markdown**."
+"- §3 if and only if §4 is singular (non-invertible).\n"
+"- §5.\n"
+"- §6.\n"
+"\n"
+"In Mathlib, §7 is defined for §8.\n"
+"\n"
+"### Your Task\n"
+"\n"
+"Prove that the determinant of the identity matrix is §9.\n"
+"\n"
+"### Strategy\n"
+"\n"
+"The lemma §10 states §11. Use §12.\n"
+"\n"
+"### Cryptographic Context\n"
+"\n"
+"In **MinRank**, we seek a linear combination of matrices whose determinant is zero\n"
+"(i.e., the combination is singular). Understanding that §13 establishes the\n"
+"baseline: the identity is the farthest thing from singular."
 msgstr ""
 
-#: Game.Levels.DemoWorld.L01_HelloWorld
-msgid "This last message appears if the level is solved."
+#. §0: `b`
+#. §1: `a`
+#. §2: `h : a → b`
+#: Game.Levels.Tutorial.L03_Apply
+msgid "To prove §0, it suffices to prove §1 since §2. Type: apply h"
 msgstr ""
 
-#: Game.Levels.DemoWorld.L01_HelloWorld
-msgid "This text is shown as first message when the level is played.\n"
-"You can insert hints in the proof below. They will appear in this side panel\n"
-"depending on the proof a user provides."
+#: Game.Levels.UOV
+msgid "Welcome to the **UOV World**!\n"
+"\n"
+"## The UOV Signature Scheme\n"
+"\n"
+"**UOV** (Unbalanced Oil and Vinegar) is a multivariate quadratic signature scheme\n"
+"proposed by Patarin (1997). It is a leading candidate for post-quantum signatures.\n"
+"\n"
+"### How UOV Works\n"
+"\n"
+"1. **Secret Key**: A quadratic map F : F^o x F^v -> F^o\n"
+"   (the central map) that is easy to invert: given a target y and\n"
+"   vinegar values v, solve for oil values o.\n"
+"\n"
+"2. **Public Key**: P = F composed with S where S is a secret\n"
+"   invertible linear map. P is a system of o quadratic equations\n"
+"   in n = o + v variables.\n"
+"\n"
+"3. **Signing**: To sign m, hash to get y = H(m) in F^o. Choose random\n"
+"   vinegar v, solve F(o, v) = y for o, then output sigma = S^{-1}(o, v).\n"
+"\n"
+"4. **Verification**: Check P(sigma) = y, i.e., H(m).\n"
+"\n"
+"The key property is that P = F composed with S implies\n"
+"P(sigma) = F(S(sigma)).\n"
+"\n"
+"### This World\n"
+"\n"
+"You will prove the correctness of UOV step by step, from linear maps through\n"
+"quadratic forms to the full verification identity.\n"
+"\n"
+"### Prerequisites\n"
+"\n"
+"Complete the Tutorial World and Matrix Algebra World first."
 msgstr ""
 
-#: Game.Levels.DemoWorld
-msgid "This introduction is shown before one enters level 1 of the demo world. Use markdown."
+#: Game.Levels.MinRank.L07_Capstone
+msgid "Step 3: Simplify c^n * 0 to 0. Type: rw [mul_zero]"
 msgstr ""
 
-#. §0: `«{h}»`
-#. §1: `«{g}»`
-#: Game.Levels.DemoWorld.L01_HelloWorld
-msgid "You can either start using §0 or §1."
+#: Game.Levels.Tutorial.L06_Capstone
+msgid "Capstone: Combining Tactics"
 msgstr ""
 
-#: Game.Levels.DemoWorld
-msgid "Demo World"
+#. §0: `ring`
+#: Game.Levels.UOV.L02_Quadratic
+msgid "The expansion of (a+b)^2 is the simplest non-trivial quadratic identity.\n"
+"In UOV, the central map and public key are systems of such quadratic forms,\n"
+"and §0 can verify their algebraic properties."
+msgstr ""
+
+#: GameServer.RpcHandlers
+msgid "level completed with warnings… 🎭"
+msgstr ""
+
+#: Game.Levels.MinRank.L01_LinearCombination
+msgid "Linear combinations of matrices are the basic objects in the MinRank problem.\n"
+"The goal is to find coefficients lambda_i making a particular linear combination\n"
+"have low rank."
+msgstr ""
+
+#. §0: `rw`
+#. §1: `exact`
+#. §2: `apply`
+#. §3: `simp`
+#. §4: `ring`
+#. §5: `M`
+#. §6: `g`
+#. §7: `a b`
+#. §8: `h : a * b = b * a`
+#. §9: `g^(a*b) = g^(b*a)`
+#. §10: `a * b`
+#. §11: `b * a`
+#. §12: `h`
+#: Game.Levels.Tutorial.L06_Capstone
+msgid "## Capstone Level\n"
+"\n"
+"In this capstone, you combine everything you have learned: §0, §1, §2,\n"
+"§3, and §4.\n"
+"\n"
+"### Cryptographic Motivation\n"
+"\n"
+"In the **Diffie-Hellman key exchange**, two parties agree on a shared secret:\n"
+"\n"
+"    g^(ab) = g^(ba)\n"
+"\n"
+"This equality holds because exponentiation in a commutative monoid satisfies\n"
+"g^(a*b) = g^(b*a) when a, b are natural numbers. Proving this algebraically involves:\n"
+"\n"
+"1. Rewriting with the commutativity of multiplication.\n"
+"2. Simplifying the exponents.\n"
+"\n"
+"### Your Task\n"
+"\n"
+"Given a commutative monoid §5, an element §6, natural numbers §7, and a\n"
+"hypothesis §8, prove that §9.\n"
+"\n"
+"### Strategy\n"
+"\n"
+"1. Rewrite §10 to §11 using §12.\n"
+"2. The goal becomes trivially true after the rewrite."
+msgstr ""
+
+#. §0: `a`
+#. §1: `ha`
+#: Game.Levels.Tutorial.L03_Apply
+msgid "Now prove §0 using your hypothesis §1. Type: exact ha"
+msgstr ""
+
+#: Game.Levels.MinRank.L07_Capstone
+msgid "Step 1: Rewrite det(c • A) = c^Fintype.card (Fin n) * det(A). Type: rw [Matrix.det_smul]"
+msgstr ""
+
+#. §0: `exact`
+#. §1: `exact`
+#: Game.Levels.Tutorial.L02_Exact
+msgid "The §0 tactic is the simplest closing tactic. It will be your go-to move when\n"
+"the goal is already present among your hypotheses.\n"
+"\n"
+"In the UOV signature scheme, the final verification step often reduces to an identity\n"
+"that is directly available, and §1 closes the proof."
+msgstr ""
+
+#. §0: `e (e.symm w) = w`
+#. §1: `e.apply_symm_apply`
+#: Game.Levels.UOV.L06_Verification
+msgid "## UOV Verification\n"
+"\n"
+"UOV verification checks: P(sigma) = y where y = H(m).\n"
+"\n"
+"By the structure of the public key (P = F composed with S), this is:\n"
+"\n"
+"    F(S(sigma)) = y\n"
+"\n"
+"During signing, we chose sigma = S^{-1}(o, v) where F(o, v) = y.\n"
+"So S(sigma) = S(S^{-1}(o, v)) = (o, v), and thus:\n"
+"\n"
+"    P(sigma) = F(S(sigma)) = F(o, v) = y\n"
+"\n"
+"### Your Task\n"
+"\n"
+"Prove that if e is a linear equivalence with e composed with e^{-1} = id,\n"
+"and we set sigma = e^{-1}(w), then e(sigma) = w.\n"
+"\n"
+"In other words: if sigma = S^{-1}(w), then S(sigma) = w.\n"
+"\n"
+"### Strategy\n"
+"\n"
+"Use the property that §0, which is §1."
+msgstr ""
+
+#. §0: `Matrix`
+#. §1: `A`
+#. §2: `lambda`
+#. §3: `rw`
+#. §4: `0 * A`
+#. §5: `0`
+#. §6: `zero_smul`
+#. §7: `rw`
+#. §8: `lambda * A + 0`
+#. §9: `lambda * A`
+#. §10: `add_zero`
+#. §11: `rfl`
+#: Game.Levels.MinRank.L01_LinearCombination
+msgid "## Linear Combinations\n"
+"\n"
+"In the MinRank problem, we work with linear combinations of matrices:\n"
+"\n"
+"    M = lambda_1 * M_1 + lambda_2 * M_2 + ... + lambda_k * M_k\n"
+"\n"
+"In Lean, the sum of two matrices is component-wise, and scalar multiplication\n"
+"scales every entry. These are just the standard module operations on §0.\n"
+"\n"
+"### Your Task\n"
+"\n"
+"Prove that lambda * A + 0 * A = lambda * A for any matrix §1\n"
+"and scalar §2.\n"
+"\n"
+"### Strategy\n"
+"\n"
+"1. §3 to simplify §4 to §5 using §6.\n"
+"2. §7 to simplify §8 to §9 using §10.\n"
+"3. Close with §11."
+msgstr ""
+
+#: Game.Levels.MatrixAlgebra
+msgid "Welcome to **Matrix Algebra World**!\n"
+"\n"
+"In multivariate and algebraic cryptography, matrices over finite fields are everywhere:\n"
+"\n"
+"- **UOV**: The public key is derived from a structured system of quadratic polynomials,\n"
+"  which can be represented using matrices.\n"
+"- **MinRank**: The problem of finding a low-rank linear combination of given matrices.\n"
+"- **Support-Minor**: Extends MinRank using minors (determinants of submatrices).\n"
+"\n"
+"This world teaches you how to work with matrices in Mathlib: multiplication, determinants,\n"
+"transpose, rank, and submatrices. We follow the APOS pedagogical framework.\n"
+"\n"
+"### Prerequisites\n"
+"\n"
+"Complete the Tutorial World first."
+msgstr ""
+
+#: Game.Levels.MinRank.L03_RankBound
+msgid "Determinant of a Scalar Multiple"
+msgstr ""
+
+#. §0: `rw`
+#. §1: `rw`
+#. §2: `h : x = 2`
+#. §3: `x + x = 4`
+#. §4: `rw [h]`
+#. §5: `x`
+#. §6: `2`
+#. §7: `2 + 2 = 4`
+#. §8: `h : x = 2`
+#. §9: `g : y = 4`
+#. §10: `x + x = y`
+#. §11: `rw [h]`
+#. §12: `x`
+#. §13: `2`
+#. §14: `rw [g]`
+#. §15: `y`
+#. §16: `4`
+#. §17: `2 + 2 = 4`
+#. §18: `y`
+#. §19: `rw [g]`
+#. §20: `x`
+#. §21: `rw [h]`
+#: Game.Levels.Tutorial.L01_Rewrite
+msgid "## The §0 Tactic\n"
+"\n"
+"The most fundamental tactic in Lean is **§1** (rewrite). It replaces one side of an\n"
+"equality with the other side throughout your goal.\n"
+"\n"
+"Suppose you have a hypothesis §2 and your goal is to prove §3.\n"
+"You can §4 to turn every occurrence of §5 into §6, reducing the goal to §7.\n"
+"\n"
+"### Your Task\n"
+"\n"
+"You are given:\n"
+"- §8 (x equals 2)\n"
+"- §9 (y equals 4)\n"
+"\n"
+"Prove that §10.\n"
+"\n"
+"### Strategy\n"
+"\n"
+"1. Use §11 to replace §12 with §13.\n"
+"2. Use §14 to replace §15 with §16.\n"
+"3. The goal becomes §17, which Lean can verify automatically.\n"
+"\n"
+"Equivalently, you could rewrite §18 first using §19, then §20 using §21."
+msgstr ""
+
+#: Game.Levels.UOV.L04_Invertible
+msgid "Invertibility is the key algebraic property that makes UOV signing possible.\n"
+"S^{-1} exists precisely because S is a linear equivalence.\n"
+"\n"
+"In the signing procedure, we compute sigma = S^{-1}(o, v). The fact that\n"
+"S composed with S^{-1} = id guarantees that S(sigma) = (o, v), which is\n"
+"what we need for correctness."
+msgstr ""
+
+#: Game.Levels.UOV.L07_Capstone
+msgid "Step 3: The goal is now F w = y, which is hF. Type: exact hF"
+msgstr ""
+
+#. §0: `0 * A`
+#. §1: `0`
+#. §2: `Matrix.det_zero`
+#: Game.Levels.MinRank.L02_DetZero
+msgid "## Singular Combinations\n"
+"\n"
+"In MinRank, we seek lambda_i such that Sum lambda_i M_i has low rank.\n"
+"The extreme case is rank 0, meaning the combination is the zero matrix.\n"
+"\n"
+"If lambda = 0, then lambda * A = 0 (zero matrix), and\n"
+"det(lambda * A) = det(0) = 0.\n"
+"\n"
+"### Your Task\n"
+"\n"
+"Prove that if lambda = 0, then det(lambda * A) = 0.\n"
+"\n"
+"### Strategy\n"
+"\n"
+"1. Rewrite the hypothesis h : lambda = 0 into the goal.\n"
+"2. Simplify §0 to §1.\n"
+"3. Use §2 to show det(0) = 0."
+msgstr ""
+
+#: Game.Levels.Tutorial.L05_Ring
+msgid "Polynomial Identities with ring"
+msgstr ""
+
+#: Game.Levels.MatrixAlgebra.L06_Capstone
+msgid "Capstone: The Rank-Determinant Connection"
+msgstr ""
+
+#. §0: `ring`
+#: Game.Levels.UOV.L02_Quadratic
+msgid "The §0 tactic proves this automatically. Type: ring"
+msgstr ""
+
+#. §0: `e.symm_comp`
+#: Game.Levels.UOV.L04_Invertible
+msgid "Use §0 which states e.symm.toLinearMap ∘ₛₗ e.toLinearMap = LinearMap.id."
+msgstr ""
+
+#. §0: `Matrix.det_smul`
+#: Game.Levels.MinRank.L03_RankBound
+msgid "Use §0 which gives det(c • A) = c^n * det(A)."
+msgstr ""
+
+#: Game.Levels.MatrixAlgebra.L02_Det
+msgid "Determinant of the Identity"
+msgstr ""
+
+#: Game.Levels.Tutorial.L04_Simp
+msgid "Automation with simp"
+msgstr ""
+
+#. §0: `Matrix.mul_one`
+#: Game.Levels.MatrixAlgebra.L01_MatrixMul
+msgid "The identity §0 states A * 1 = A. Type: exact Matrix.mul_one A"
+msgstr ""
+
+#. §0: `ring`
+#: Game.Levels.Tutorial.L05_Ring
+msgid "The §0 tactic proves this polynomial identity automatically. Type: ring"
 msgstr ""
 
 #: Game
-msgid "Game Template"
+msgid "Learn mathematical cryptography — UOV, MinRank, and more — while mastering Lean 4 and Mathlib from scratch."
+msgstr ""
+
+#. §0: `simp`
+#. §1: `simp`
+#: Game.Levels.Tutorial.L04_Simp
+msgid "§0 is powerful but not omniscient. It excels at routine simplifications but may\n"
+"not find deep structural arguments. Use it for cleanup, then switch to targeted tactics\n"
+"for the hard parts.\n"
+"\n"
+"In the UOV world, you will use §1 to simplify polynomial evaluations after\n"
+"substituting oil and vinegar variables."
+msgstr ""
+
+#: Game.Levels.MinRank.L05_SupportMinors
+msgid "The Zero Matrix Has All Zero Minors"
+msgstr ""
+
+#: Game.Levels.MatrixAlgebra.L04_Transpose
+msgid "Transpose of a Product"
+msgstr ""
+
+#. §0: `ring`
+#: Game.Levels.UOV.L02_Quadratic
+msgid "## Quadratic Forms\n"
+"\n"
+"A **quadratic form** is a homogeneous polynomial of degree 2. In UOV, the central map\n"
+"F consists of quadratic polynomials in the oil and vinegar variables.\n"
+"\n"
+"A basic identity: for any a, b in a commutative ring,\n"
+"\n"
+"    (a + b)^2 = a^2 + 2ab + b^2\n"
+"\n"
+"### Your Task\n"
+"\n"
+"Prove this identity using §0.\n"
+"\n"
+"### Why This Matters\n"
+"\n"
+"The UOV central map has the form:\n"
+"\n"
+"    F_k(o, v) = Sum alpha_ij o_i v_j + Sum beta_ij v_i v_j\n"
+"\n"
+"Each component is a quadratic form. Verifying the correctness of UOV reduces to\n"
+"proving polynomial identities like the one above."
+msgstr ""
+
+#: Game.Levels.MatrixAlgebra.L03_Rank
+msgid "Multiplicativity of the Determinant"
+msgstr ""
+
+#. §0: `exact`
+#. §1: `exact`
+#. §2: `P`
+#. §3: `h : P`
+#. §4: `exact h`
+#. §5: `h : x = y`
+#. §6: `x = y`
+#. §7: `exact h`
+#. §8: `exact`
+#: Game.Levels.Tutorial.L02_Exact
+msgid "## The §0 Tactic\n"
+"\n"
+"The **§1** tactic closes a goal by providing a term that has exactly the right type.\n"
+"\n"
+"If your goal is §2 and you have a hypothesis §3, then §4 finishes the proof.\n"
+"Think of it as saying: I have exactly what is needed, right here.\n"
+"\n"
+"### Your Task\n"
+"\n"
+"You are given a hypothesis §5 and your goal is to prove §6.\n"
+"\n"
+"Simply use §7 to close the goal.\n"
+"\n"
+"### Mathematical Context\n"
+"\n"
+"In cryptographic proofs, we often reduce a complex verification to a single known\n"
+"identity. When the goal exactly matches a hypothesis or previously proved result,\n"
+"§8 is the way to close it."
+msgstr ""
+
+#: Game.Levels.UOV.L02_Quadratic
+msgid "Quadratic Form Identity"
+msgstr ""
+
+#. §0: `rw`
+#. §1: `rw`
+#: Game.Levels.Tutorial.L01_Rewrite
+msgid "Excellent! You just proved your first Lean theorem using §0.\n"
+"\n"
+"In cryptography, we constantly substitute known values (keys, signatures, hashes)\n"
+"into equations to verify correctness. The §1 tactic is the Lean analogue of this\n"
+"substitution step."
+msgstr ""
+
+#. §0: `Matrix.det_smul`
+#. §1: `(lambda * A).det`
+#. §2: `lambda^n * A.det`
+#. §3: `A.det`
+#. §4: `0`
+#. §5: `h`
+#. §6: `lambda^n * 0`
+#. §7: `0`
+#. §8: `mul_zero`
+#: Game.Levels.MinRank.L07_Capstone
+msgid "## Capstone: MinRank Key Identity\n"
+"\n"
+"The MinRank problem seeks lambda_1, lambda_2 such that\n"
+"det(lambda_1 * A + lambda_2 * B) = 0 (for the rank-deficient case with 2 matrices).\n"
+"\n"
+"A key algebraic identity used in MinRank solvers is the **multilinearity** of the\n"
+"determinant in the matrix argument. Specifically, for a scalar lambda:\n"
+"\n"
+"    det(lambda * A) = lambda^n * det(A)\n"
+"\n"
+"When det(A) = 0 (i.e., A is already singular), then det(lambda * A) = 0\n"
+"for any lambda. This is why rank-deficient matrices are the targets in MinRank.\n"
+"\n"
+"### Your Task\n"
+"\n"
+"Prove: if det(A) = 0, then det(lambda * A) = 0.\n"
+"\n"
+"### Strategy\n"
+"\n"
+"1. Use §0 to rewrite §1 as §2.\n"
+"2. Rewrite §3 to §4 using the hypothesis §5.\n"
+"3. Simplify §6 to §7 using §8."
+msgstr ""
+
+#: Game.Levels.MinRank.L04_Minor
+msgid "Determinant of a Submatrix"
+msgstr ""
+
+#: Game.Levels.Tutorial.L01_Rewrite
+msgid "Your First Rewrite"
+msgstr ""
+
+#. §0: `simp`
+#: Game.Levels.Tutorial.L04_Simp
+msgid "The §0 tactic can close this goal automatically. Type: simp"
+msgstr ""
+
+#: Game.Levels.UOV.L01_LinearMap
+msgid "Linear map composition is the algebraic backbone of UOV. The public key transformation\n"
+"is literally a composition of linear and quadratic maps. You now know how Lean\n"
+"represents this fundamental operation."
+msgstr ""
+
+#: Game.Levels.MinRank.L07_Capstone
+msgid "Capstone: The MinRank Identity"
+msgstr ""
+
+#: Game.Levels.UOV
+msgid "UOV World"
+msgstr ""
+
+#. §0: `A.submatrix rowSub colSub`
+#. §1: `rowSub : Fin m' → Fin m`
+#. §2: `colSub : Fin n' → Fin n`
+#. §3: `Matrix.transpose_submatrix`
+#: Game.Levels.MatrixAlgebra.L05_Submatrix
+msgid "## Submatrices\n"
+"\n"
+"A **submatrix** is formed by selecting subsets of rows and columns from a matrix.\n"
+"In Mathlib, §0 extracts the submatrix using functions\n"
+"§1 and §2.\n"
+"\n"
+"The **minor** of a matrix is the determinant of a square submatrix. Minors are\n"
+"fundamental in the **Support-Minor** cryptographic model.\n"
+"\n"
+"### Your Task\n"
+"\n"
+"Prove that the transpose of a submatrix equals the submatrix of the transpose\n"
+"(with the row/column functions swapped).\n"
+"\n"
+"### Strategy\n"
+"\n"
+"Use the lemma §3.\n"
+"\n"
+"### Cryptographic Context\n"
+"\n"
+"In the **Support-Minor** model, an attacker tries to recover the secret key by finding\n"
+"linear dependencies among minors of the public-key matrices. Understanding how\n"
+"submatrices interact with transpose is essential for manipulating these structures."
+msgstr ""
+
+#. §0: `Matrix.transpose_mul`
+#: Game.Levels.MinRank.L06_LinearDependence
+msgid "The transpose distributes over addition. This means that linear combinations of\n"
+"transposes equal transposes of linear combinations — a key tool when manipulating\n"
+"matrix expressions in MinRank attacks.\n"
+"\n"
+"Combined with §0 (from the Matrix Algebra world), you can now\n"
+"manipulate arbitrary matrix expressions involving sums, products, and transposes."
+msgstr ""
+
+#: Game.Levels.MatrixAlgebra.L06_Capstone
+msgid "Congratulations! You have completed the Matrix Algebra World.\n"
+"\n"
+"You now understand matrices, determinants, transposes, and submatrices — the\n"
+"fundamental objects of algebraic cryptography. The connection between rank and\n"
+"determinants of submatrices (minors) is the mathematical foundation of the\n"
+"MinRank and Support-Minor attacks.\n"
+"\n"
+"Next: **UOV World**, where you will prove the correctness of the Unbalanced Oil\n"
+"and Vinegar signature scheme."
+msgstr ""
+
+#. §0: `ring`
+#. §1: `ring`
+#. §2: `ring`
+#. §3: `(a + b)^2 = a^2 + 2*a*b + b^2`
+#. §4: `(a - b) * (a + b) = a^2 - b^2`
+#. §5: `a b`
+#. §6: `(a + b)^2 = a^2 + 2*a*b + b^2`
+#. §7: `ring`
+#: Game.Levels.Tutorial.L05_Ring
+msgid "## The §0 Tactic\n"
+"\n"
+"The **§1** tactic proves **polynomial identities in commutative (semi)rings**\n"
+"automatically. If your goal is a polynomial equation that is true purely by the\n"
+"axioms of commutative rings (associativity, commutativity, distributivity), §2\n"
+"can close it.\n"
+"\n"
+"### Example\n"
+"\n"
+"The identity §3 holds in any commutative ring.\n"
+"So does §4.\n"
+"\n"
+"### Your Task\n"
+"\n"
+"Prove that for any elements §5 of a commutative ring, §6.\n"
+"\n"
+"### Why This Matters for Cryptography\n"
+"\n"
+"Multivariate cryptographic schemes like **UOV** and **HFE** are built on polynomial\n"
+"equations over finite fields. The correctness of these schemes boils down to polynomial\n"
+"identities, and §7 can verify many of them automatically."
+msgstr ""
+
+#: Game.Levels.UOV.L07_Capstone
+msgid "Step 2: Simplify e (e.symm w) to w. Type: rw [e.apply_symm_apply]"
+msgstr ""
+
+#: Game.Levels.MinRank.L04_Minor
+msgid "Simplify the submatrix of identity with identity functions."
+msgstr ""
+
+#: Game.Levels.MatrixAlgebra.L01_MatrixMul
+msgid "Matrix Multiplication"
+msgstr ""
+
+#: Game.Levels.Tutorial.L03_Apply
+msgid "Forward and Backward with apply"
+msgstr ""
+
+#. §0: `rw`
+#. §1: `exact`
+#. §2: `apply`
+#. §3: `simp`
+#. §4: `ring`
+#: Game.Levels.MinRank.L07_Capstone
+msgid "**Congratulations!** You have completed the MinRank World!\n"
+"\n"
+"You just proved the **MinRank key identity**: if a matrix A is singular\n"
+"(det(A) = 0), then any scalar multiple lambda * A is also singular.\n"
+"\n"
+"This is the algebraic foundation of MinRank attacks:\n"
+"- The attacker searches for lambda_i making Sum lambda_i M_i singular.\n"
+"- If the target combination has a singular component, the scalar multiples\n"
+"  preserve singularity.\n"
+"- The determinant becomes a polynomial in the lambda_i, and finding its roots\n"
+"  solves the MinRank instance.\n"
+"\n"
+"## What You Have Learned\n"
+"\n"
+"Across all four worlds, you have:\n"
+"1. Mastered the core Lean tactics: §0, §1, §2, §3, §4.\n"
+"2. Worked with matrices, determinants, transposes, and submatrices in Mathlib.\n"
+"3. Proved the correctness of the UOV signature scheme.\n"
+"4. Formalized key identities underlying the MinRank and Support-Minor models.\n"
+"\n"
+"You are now equipped to read and write research-grade Lean 4 / Mathlib proofs in\n"
+"algebraic cryptography. Well done!"
+msgstr ""
+
+#. §0: `simp`
+#: Game.Levels.MinRank.L02_DetZero
+msgid "Use §0 to show det(0) = 0. Type: simp [Matrix.det_zero]"
+msgstr ""
+
+#: Game
+msgid "Welcome to **Mathematical Cryptography in Lean 4**!\n"
+"\n"
+"This game takes you from Lean 4 novice to capable reader and writer of research-grade\n"
+"Lean 4 / Mathlib proofs in multivariate and algebraic cryptography, including\n"
+"**UOV** (Unbalanced Oil and Vinegar), **MinRank**, and **Support-Minor** models.\n"
+"\n"
+"You should have a Master's degree in Mathematics but no prior Lean experience is required.\n"
+"\n"
+"## Worlds\n"
+"\n"
+"1. **Tutorial World** — Learn the basics of Lean 4: rewriting, equality, and simple automation.\n"
+"2. **Matrix Algebra World** — Matrices, determinants, and rank in Mathlib.\n"
+"3. **UOV World** — The Unbalanced Oil-and-Vinegar signature scheme and its verification.\n"
+"4. **MinRank World** — The MinRank problem and its cryptographic significance.\n"
+"\n"
+"Each world follows the **APOS** pedagogical framework (Action → Process → Object → Schema)."
+msgstr ""
+
+#: Game.Levels.Tutorial.L02_Exact
+msgid "The Exact Tactic"
+msgstr ""
+
+#. §0: `Matrix.det_one`
+#: Game.Levels.MatrixAlgebra.L02_Det
+msgid "The lemma §0 gives det(1) = 1. Type: exact Matrix.det_one"
+msgstr ""
+
+#: Game
+msgid "**Game version:** 1.0\n"
+"\n"
+"This game was built using the lean4game framework with Lean 4 and Mathlib.\n"
+"\n"
+"**Credits:** Built for cryptography researchers learning formal verification."
+msgstr ""
+
+#. §0: `Matrix.transpose_submatrix`
+#: Game.Levels.MatrixAlgebra.L05_Submatrix
+msgid "Use §0. Type: exact Matrix.transpose_submatrix A r c"
+msgstr ""
+
+#: Game.Levels.MinRank.L07_Capstone
+msgid "Step 2: Substitute det(A) = 0 using hypothesis h. Type: rw [h]"
+msgstr ""
+
+#. §0: `A`
+#. §1: `B`
+#. §2: `(A * B).det = A.det * B.det`
+#. §3: `Matrix.det_mul`
+#. §4: `(A * B).det = A.det * B.det`
+#: Game.Levels.MatrixAlgebra.L03_Rank
+msgid "## The Multiplicativity Property\n"
+"\n"
+"A fundamental property of the determinant is:\n"
+"\n"
+"    det(A * B) = det(A) * det(B)\n"
+"\n"
+"This means the determinant is a **group homomorphism** from the general linear group\n"
+"GL_n(F) to the multiplicative group F*.\n"
+"\n"
+"### Your Task\n"
+"\n"
+"Given square matrices §0 and §1, prove that §2.\n"
+"\n"
+"### Strategy\n"
+"\n"
+"Use the lemma §3, which states §4.\n"
+"\n"
+"### Cryptographic Context\n"
+"\n"
+"In **UOV**, the public key is P = S * F * T where S, T are invertible\n"
+"and F is the central map. The multiplicativity of the determinant lets us reason\n"
+"about the structure of P by decomposing it into its factors."
+msgstr ""
+
+#: Game.Levels.UOV.L04_Invertible
+msgid "Try: exact e.symm_comp"
+msgstr ""
+
+#: Game.Levels.UOV.L06_Verification
+msgid "The Verification Identity"
+msgstr ""
+
+#: Game.Levels.MinRank.L05_SupportMinors
+msgid "The zero matrix has all zero submatrices, hence all zero minors. This is the\n"
+"trivial case of the Support-Minor principle.\n"
+"\n"
+"In the non-trivial case, the attacker searches for linear combinations of public-key\n"
+"matrices whose minors vanish — revealing the secret key structure."
+msgstr ""
+
+#: Game.Levels.MinRank.L02_DetZero
+msgid "Zero Scalar Gives Zero Determinant"
+msgstr ""
+
+#. §0: `rw`
+#. §1: `exact`
+#. §2: `apply`
+#. §3: `simp`
+#. §4: `ring`
+#: Game.Levels.Tutorial.L06_Capstone
+msgid "Congratulations! You have completed the Tutorial World.\n"
+"\n"
+"You now know the five core tactics (§0, §1, §2, §3, §4) that\n"
+"form the backbone of every Lean proof. You also saw how polynomial identities\n"
+"underpin cryptographic protocols like Diffie-Hellman.\n"
+"\n"
+"Next up: **Matrix Algebra World**, where we formalize matrices, determinants, and\n"
+"rank — the building blocks of the UOV and MinRank cryptographic schemes."
+msgstr ""
+
+#. §0: `P = F.comp S`
+#. §1: `P x = F (S x)`
+#. §2: `x`
+#. §3: `LinearMap.comp_apply`
+#: Game.Levels.UOV.L05_PublicKey
+msgid "## Public Key Structure\n"
+"\n"
+"In UOV, the public key is defined as:\n"
+"\n"
+"    P = F composed with S\n"
+"\n"
+"where S is an invertible linear map and F is the central quadratic map.\n"
+"\n"
+"For verification, we need: P(sigma) = F(S(sigma)).\n"
+"\n"
+"This is just the definition of function composition applied to a specific input.\n"
+"\n"
+"### Your Task\n"
+"\n"
+"Prove that if §0 (the public key is the composition), then\n"
+"§1 for any input §2.\n"
+"\n"
+"### Strategy\n"
+"\n"
+"Apply the definition of composition using §3."
+msgstr ""
+
+#. §0: `apply`
+#. §1: `apply`
+#. §2: `Q`
+#. §3: `h : P implies Q`
+#. §4: `apply h`
+#. §5: `Q`
+#. §6: `P`
+#. §7: `b`
+#. §8: `h : a implies b`
+#. §9: `apply h`
+#. §10: `a`
+#. §11: `h : a implies b`
+#. §12: `ha : a`
+#. §13: `b`
+#. §14: `apply h`
+#. §15: `b`
+#. §16: `a`
+#. §17: `exact ha`
+#: Game.Levels.Tutorial.L03_Apply
+msgid "## The §0 Tactic\n"
+"\n"
+"The **§1** tactic works *backwards*. If your goal is §2 and you know a theorem\n"
+"§3, then §4 changes the goal from §5 to §6.\n"
+"\n"
+"### Example\n"
+"\n"
+"If your goal is §7 and you have §8, then §9 changes the goal to §10.\n"
+"\n"
+"This is like working backwards in a proof: To prove Q, it suffices to prove P, because\n"
+"P implies Q.\n"
+"\n"
+"### Your Task\n"
+"\n"
+"Given:\n"
+"- §11 (h states that a implies b)\n"
+"- §12 (we know a is true)\n"
+"\n"
+"Prove §13.\n"
+"\n"
+"### Strategy\n"
+"\n"
+"1. Use §14 to reduce the goal from §15 to §16.\n"
+"2. Use §17 to close the remaining goal."
+msgstr ""
+
+#: Game.Levels.MinRank
+msgid "MinRank World"
+msgstr ""
+
+#. §0: `e : M ≃ₗ[R] M`
+#. §1: `F : M →ₗ[R] N`
+#. §2: `w : M`
+#. §3: `hF : F w = y`
+#. §4: `y : N`
+#. §5: `(F.comp e.toLinearMap) (e.symm w) = y`
+#. §6: `(F.comp e.toLinearMap) (e.symm w)`
+#. §7: `F (e.toLinearMap (e.symm w))`
+#. §8: `LinearMap.comp_apply`
+#. §9: `e.toLinearMap (e.symm w)`
+#. §10: `w`
+#. §11: `e.apply_symm_apply`
+#. §12: `F w = y`
+#. §13: `hF`
+#. §14: `exact hF`
+#: Game.Levels.UOV.L07_Capstone
+msgid "## Capstone: Full UOV Correctness\n"
+"\n"
+"We now combine all the pieces to prove the **UOV correctness theorem**:\n"
+"\n"
+"**If** sigma = S^{-1}(w) and F(w) = y,\n"
+"**then** P(sigma) = y.\n"
+"\n"
+"Proof:\n"
+"1. P(sigma) = (F composed with S)(sigma) = F(S(sigma))\n"
+"   (definition of composition).\n"
+"2. S(sigma) = S(S^{-1}(w)) = w (inverse property).\n"
+"3. F(w) = y (given).\n"
+"4. Therefore P(sigma) = y.\n"
+"\n"
+"### Your Task\n"
+"\n"
+"Given:\n"
+"- §0 (the secret linear map S, as a linear equivalence)\n"
+"- §1 (the central map F)\n"
+"- §2 (the intermediate value (o, v))\n"
+"- §3 (the central map gives the target)\n"
+"- §4 (the target hash value)\n"
+"\n"
+"Prove: §5\n"
+"\n"
+"This is: P(sigma) = y where sigma = S^{-1}(w) and P = F composed with S.\n"
+"\n"
+"### Strategy\n"
+"\n"
+"1. Rewrite §6 to §7\n"
+"   using §8.\n"
+"2. Rewrite §9 to §10 using §11.\n"
+"3. The goal becomes §12, which is exactly §13. Use §14."
+msgstr ""
+
+#: Game.Levels.UOV.L05_PublicKey
+msgid "Apply the definition of composition. Type: exact LinearMap.comp_apply F S x"
+msgstr ""
+
+#: Game.Levels.MinRank.L04_Minor
+msgid "Now use det_one. Type: exact Matrix.det_one"
+msgstr ""
+
+#. §0: `add_zero`
+#: Game.Levels.MinRank.L01_LinearCombination
+msgid "Simplify c • A + 0 to c • A using §0. Type: rw [add_zero]"
+msgstr ""
+
+#: Game.Levels.MatrixAlgebra.L03_Rank
+msgid "The multiplicativity of the determinant is one of the most used properties in\n"
+"algebraic cryptography. It allows us to decompose complex matrix expressions into\n"
+"products of simpler ones."
+msgstr ""
+
+#: Game.Levels.MatrixAlgebra.L05_Submatrix
+msgid "Submatrices"
+msgstr ""
+
+#: Game.Levels.MatrixAlgebra.L02_Det
+msgid "The determinant of the identity is 1 — the simplest non-trivial determinant fact.\n"
+"In the MinRank problem, we search for combinations where the determinant drops to 0,\n"
+"indicating a rank deficiency."
+msgstr ""
+
+#. §0: `ring`
+#. §1: `ring`
+#: Game.Levels.Tutorial.L05_Ring
+msgid "The §0 tactic is one of the most useful tools in cryptographic proofs. It handles\n"
+"all polynomial algebra over commutative rings, which covers most of the grunt work\n"
+"in verifying multivariate signature schemes.\n"
+"\n"
+"In the UOV world, the final verification identity is a polynomial identity over a\n"
+"finite field, and §1 can close it."
+msgstr ""
+
+#. §0: `A.submatrix r c`
+#. §1: `(A.submatrix r c).det`
+#. §2: `Matrix.submatrix_id_id`
+#. §3: `Matrix.det_one`
+#: Game.Levels.MinRank.L04_Minor
+msgid "## Minors\n"
+"\n"
+"A **minor** of a matrix is the determinant of a square submatrix. If A is\n"
+"m x n, a k x k minor is det(A_{S,T}) where S is a subset of [m],\n"
+"T is a subset of [n], |S| = |T| = k.\n"
+"\n"
+"In Mathlib, §0 extracts a submatrix, and §1\n"
+"is the corresponding minor.\n"
+"\n"
+"### Cryptographic Context\n"
+"\n"
+"In the **Support-Minor** model (a generalization of MinRank), the attacker\n"
+"exploits the fact that if rank(M) <= r, then all (r+1) x (r+1) minors of M are zero.\n"
+"\n"
+"### Your Task\n"
+"\n"
+"Prove that the determinant of the identity submatrix (selecting all rows and columns\n"
+"of the identity) equals 1.\n"
+"\n"
+"### Strategy\n"
+"\n"
+"The submatrix of the identity with identity row/column functions is the identity.\n"
+"Use §2 to simplify, then §3."
+msgstr ""
+
+#: Game.Levels.UOV.L07_Capstone
+msgid "Capstone: UOV Correctness"
+msgstr ""
+
+#: Game.Levels.MinRank.L03_RankBound
+msgid "The formula det(lambda * A) = lambda^n * det(A) is a special case of how\n"
+"determinants interact with linear algebra operations.\n"
+"\n"
+"In MinRank, the determinant of Sum lambda_i M_i is a polynomial in the\n"
+"lambda_i. Finding coefficients that make this polynomial zero is the core\n"
+"algebraic challenge."
+msgstr ""
+
+#. §0: `a * b`
+#. §1: `b * a`
+#. §2: `h`
+#: Game.Levels.Tutorial.L06_Capstone
+msgid "Rewrite §0 to §1 using hypothesis §2. Type: rw [h]"
+msgstr ""
+
+#: Game.Levels.Tutorial
+msgid "Tutorial World"
+msgstr ""
+
+#. §0: `e.apply_symm_apply`
+#: Game.Levels.UOV.L06_Verification
+msgid "Use §0 which states e (e.symm w) = w."
+msgstr ""
+
+#. §0: `zero_smul`
+#: Game.Levels.MinRank.L01_LinearCombination
+msgid "Simplify 0 • A to 0 using §0. Type: rw [zero_smul]"
+msgstr ""
+
+#: Game.Levels.MinRank.L01_LinearCombination
+msgid "Linear Combinations of Matrices"
+msgstr ""
+
+#: Game.Levels.MatrixAlgebra.L01_MatrixMul
+msgid "You proved that the identity matrix is a right-identity for matrix multiplication.\n"
+"This is the Action stage: applying a known lemma directly.\n"
+"\n"
+"In the next level, we move to determinants."
+msgstr ""
+
+#: Game.Levels.MinRank.L02_DetZero
+msgid "When all coefficients are zero, the linear combination is the zero matrix — which\n"
+"has determinant zero and rank zero. This is the trivial (degenerate) solution to\n"
+"MinRank. The interesting challenge is finding non-trivial lambda_i that produce\n"
+"low rank."
+msgstr ""
+
+#: Game.Levels.UOV.L05_PublicKey
+msgid "This is the fundamental identity underlying UOV verification:\n"
+"P(sigma) = F(S(sigma)).\n"
+"\n"
+"The public key P is applied to the signature sigma, which equals\n"
+"applying the secret linear map S first, then the central map F."
+msgstr ""
+
+#. §0: `apply`
+#. §1: `apply`
+#: Game.Levels.Tutorial.L03_Apply
+msgid "The §0 tactic is central to structured proof. In cryptographic security proofs,\n"
+"we frequently chain implications: if the adversary wins, then this game reduces to\n"
+"that game, which implies a computational assumption is broken.\n"
+"\n"
+"Each §1 is one link in that chain."
+msgstr ""
+
+#: GameServer.RpcHandlers
+msgid "level completed! 🎉"
+msgstr ""
+
+#: Game.Levels.UOV.L03_Composition
+msgid "Associativity of composition means the order of grouping doesn't matter.\n"
+"In UOV, the public key P = F composed with S involves composing\n"
+"maps, and associativity guarantees we can regroup compositions as needed."
+msgstr ""
+
+#. §0: `f`
+#. §1: `g`
+#. §2: `h`
+#. §3: `(h.comp g).comp f = h.comp (g.comp f)`
+#. §4: `LinearMap.comp_assoc`
+#: Game.Levels.UOV.L03_Composition
+msgid "## Composition in UOV\n"
+"\n"
+"The UOV public key is P = F composed with S, where:\n"
+"- S : F^n -> F^n is a secret linear map.\n"
+"- F : F^n -> F^o is the (quadratic) central map.\n"
+"\n"
+"The correctness of signing requires that if sigma = S^{-1}(o, v) and\n"
+"F(o, v) = y, then P(sigma) = y.\n"
+"\n"
+"This follows from: P(sigma) = F(S(sigma)) = F(o, v) = y.\n"
+"\n"
+"### Your Task\n"
+"\n"
+"Prove a simplified version: if §0 and §1 are linear maps and §2 is a third linear map,\n"
+"then §3 — composition is associative.\n"
+"\n"
+"### Strategy\n"
+"\n"
+"Use §4."
+msgstr ""
+
+#: Game.Levels.UOV.L04_Invertible
+msgid "Invertible Linear Maps"
+msgstr ""
+
+#: Game.Levels.MinRank
+msgid "Welcome to the **MinRank World**!\n"
+"\n"
+"## The MinRank Problem\n"
+"\n"
+"The **MinRank problem** is a fundamental computational problem in algebraic\n"
+"cryptography:\n"
+"\n"
+"Given matrices M_1, ..., M_k in F^(m x n) and a target rank r,\n"
+"find scalars lambda_1, ..., lambda_k in F (not all zero) such that:\n"
+"    rank(Sum lambda_i M_i) <= r\n"
+"\n"
+"### Cryptographic Significance\n"
+"\n"
+"MinRank is the basis of attacks on:\n"
+"- **HFE** (Hidden Field Equations) — Kipnis-Patarin (1999)\n"
+"- **UOV** — via the rank of the quadratic form's matrix\n"
+"- **Post-quantum NIST candidates** — e.g., GeMSS\n"
+"\n"
+"### This World\n"
+"\n"
+"You will formalize:\n"
+"1. Linear combinations of matrices.\n"
+"2. Conditions for zero determinant (singularity).\n"
+"3. Rank bounds via minors.\n"
+"4. The Support-Minors model (a generalization).\n"
+"5. A capstone proving the key algebraic identity.\n"
+"\n"
+"### Prerequisites\n"
+"\n"
+"Complete the Tutorial World and Matrix Algebra World first."
+msgstr ""
+
+#: Game.Levels.MatrixAlgebra.L05_Submatrix
+msgid "Submatrices and minors are the mathematical objects underlying the Support-Minor\n"
+"attack model. By treating a submatrix as a first-class object (not just a computation),\n"
+"we enter the **Object** stage of APOS theory."
+msgstr ""
+
+#: Game.Levels.MinRank.L03_RankBound
+msgid "Type: exact Matrix.det_smul A c"
+msgstr ""
+
+#: Game.Levels.MinRank.L05_SupportMinors
+msgid "Type: rfl"
+msgstr ""
+
+#: Game.Levels.MinRank.L06_LinearDependence
+msgid "Type: exact Matrix.transpose_add A B"
+msgstr ""
+
+#: Game.Levels.UOV.L06_Verification
+msgid "This proves the key step in UOV verification: applying S to sigma = S^{-1}(w)\n"
+"recovers w. Combined with F(w) = y, this gives:\n"
+"\n"
+"    P(sigma) = F(S(sigma)) = F(w) = y\n"
+"\n"
+"which is exactly the verification condition!"
+msgstr ""
+
+#: Game.Levels.MatrixAlgebra.L06_Capstone
+msgid "Simplify A.det * 1 to A.det using mul_one. Type: rw [mul_one]"
+msgstr ""
+
+#. §0: `A`
+#. §1: `(A * 1).det = A.det * 1`
+#. §2: `rw`
+#. §3: `A * 1`
+#. §4: `A`
+#. §5: `Matrix.mul_one`
+#. §6: `rw`
+#. §7: `A.det * 1`
+#. §8: `A.det`
+#. §9: `mul_one`
+#. §10: `A.det = A.det`
+#. §11: `rfl`
+#: Game.Levels.MatrixAlgebra.L06_Capstone
+msgid "## Capstone: Putting It All Together\n"
+"\n"
+"The **rank** of a matrix is the size of its largest invertible (non-zero determinant)\n"
+"square submatrix. A matrix has rank < r if and only if all r×r minors\n"
+"vanish (have determinant zero).\n"
+"\n"
+"### Cryptographic Significance\n"
+"\n"
+"The **MinRank problem** asks: given matrices M_1, ..., M_k and a target rank r,\n"
+"find scalars lambda_1, ..., lambda_k (not all zero) such that:\n"
+"\n"
+"    rank(Sum lambda_i M_i) <= r\n"
+"\n"
+"This is the computational heart of attacks on multivariate schemes.\n"
+"\n"
+"### Your Task\n"
+"\n"
+"Prove a simpler related fact: the determinant of a product equals the product of\n"
+"determinants, combined with the fact that the identity matrix has determinant 1.\n"
+"\n"
+"Specifically, given an invertible matrix §0 and the identity matrix, prove:\n"
+"§1\n"
+"\n"
+"### Strategy\n"
+"\n"
+"1. Use §2 to simplify §3 to §4 using §5.\n"
+"2. Use §6 to simplify §7 to §8 using §9.\n"
+"3. The goal becomes §10, which closes with §11."
+msgstr ""
+
+#: Game.Levels.MatrixAlgebra.L04_Transpose
+msgid "The transpose reverses multiplication order. This reversal is a common source of\n"
+"errors in hand calculations, but Lean keeps us honest.\n"
+"\n"
+"In quadratic-form-based cryptography (like UOV), transpose identities are pervasive."
+msgstr ""
+
+#. §0: `M`
+#. §1: `N`
+#. §2: `M →ₗ[R] N`
+#. §3: `f`
+#. §4: `g`
+#. §5: `g.comp f`
+#. §6: `f`
+#. §7: `g`
+#. §8: `g.comp f`
+#. §9: `x`
+#. §10: `g (f x)`
+#. §11: `LinearMap.comp_apply`
+#. §12: `(g.comp f) x = g (f x)`
+#: Game.Levels.UOV.L01_LinearMap
+msgid "## Linear Maps in Lean\n"
+"\n"
+"In UOV, the secret transformation S is an invertible linear map on F^n.\n"
+"In Mathlib, a linear map from module §0 to module §1 is §2\n"
+"(read: linear map from M to N).\n"
+"\n"
+"The composition of linear maps §3 and §4 is written §5 (first apply §6,\n"
+"then §7).\n"
+"\n"
+"### Cryptographic Context\n"
+"\n"
+"In UOV, the public key is P = F composed with S. Here, S is a\n"
+"linear map and F is a quadratic map. The composition F composed with S\n"
+"means: first apply S to the input, then apply F.\n"
+"\n"
+"### Your Task\n"
+"\n"
+"Prove that applying the composition §8 to a vector §9 gives §10.\n"
+"\n"
+"### Strategy\n"
+"\n"
+"Use the lemma §11, which states §12."
+msgstr ""
+
+#. §0: `LinearMap.comp_assoc`
+#: Game.Levels.UOV.L03_Composition
+msgid "Composition of linear maps is associative. Use §0."
+msgstr ""
+
+#: Game.Levels.MinRank.L06_LinearDependence
+msgid "The transpose of a sum is the sum of transposes."
+msgstr ""
+
+#. §0: `Matrix.submatrix_zero`
+#: Game.Levels.MinRank.L05_SupportMinors
+msgid "The submatrix of a zero matrix is zero. Use §0."
+msgstr ""
+
+#: Game.Levels.MinRank.L02_DetZero
+msgid "Simplify 0 • A to 0. Type: rw [zero_smul]"
+msgstr ""
+
+#: Game.Levels.UOV.L06_Verification
+msgid "Try: exact e.apply_symm_apply w"
+msgstr ""
+
+#: Game.Levels.MinRank.L06_LinearDependence
+msgid "Linear Combinations and Transpose"
+msgstr ""
+
+#. §0: `Matrix.det_mul`
+#: Game.Levels.MatrixAlgebra.L03_Rank
+msgid "Use §0 which states (A * B).det = A.det * B.det."
+msgstr ""
+
+#: Game
+msgid "Mathematical Cryptography in Lean 4"
+msgstr ""
+
+#. §0: `M ≃ₗ[R] N`
+#. §1: `e : M ≃ₗ[R] N`
+#. §2: `e.symm : N ≃ₗ[R] M`
+#. §3: `e.toLinearMap`
+#. §4: `e.symm.toLinearMap`
+#. §5: `e.toLinearMap`
+#. §6: `LinearMap.id`
+#. §7: `e.symm_comp`
+#. §8: `e.symm.toLinearMap ∘ₛₗ e.toLinearMap = LinearMap.id`
+#: Game.Levels.UOV.L04_Invertible
+msgid "## Invertible Maps and UOV Signing\n"
+"\n"
+"In UOV, the secret map S must be **invertible** — otherwise, we cannot compute\n"
+"sigma = S^{-1}(o, v) during signing.\n"
+"\n"
+"In Mathlib, a linear equivalence §0 is a linear map with a two-sided\n"
+"inverse. If §1, then §2 is the inverse,\n"
+"and §3 is the forward map.\n"
+"\n"
+"Key property: §4 composed with §5 equals §6\n"
+"(applying S then S^{-1} gives the identity).\n"
+"\n"
+"### Your Task\n"
+"\n"
+"Prove that composing a linear equivalence with its inverse (in the correct order)\n"
+"gives the identity.\n"
+"\n"
+"### Strategy\n"
+"\n"
+"Use §7, which states §8."
+msgstr ""
+
+#. §0: `(0 : Matrix).submatrix r c = 0`
+#. §1: `Matrix.submatrix_zero`
+#: Game.Levels.MinRank.L05_SupportMinors
+msgid "## Support-Minor Model\n"
+"\n"
+"The **Support-Minor** model extends MinRank by working with minors directly.\n"
+"The key insight is:\n"
+"\n"
+"If rank(M) <= r, then all (r+1) x (r+1) minors of M are zero.\n"
+"\n"
+"The converse also holds (over a field): if all (r+1) x (r+1) minors vanish,\n"
+"then rank(M) <= r.\n"
+"\n"
+"### Your Task\n"
+"\n"
+"Prove the base case: the zero matrix is its own submatrix (up to the selection\n"
+"functions), establishing that zero matrices have trivially zero minors.\n"
+"\n"
+"Prove that §0.\n"
+"\n"
+"### Strategy\n"
+"\n"
+"Use §1 which states that the submatrix of a zero matrix\n"
+"is the zero matrix."
+msgstr ""
+
+#: Game.Levels.MinRank.L04_Minor
+msgid "The determinant of the identity submatrix (with identity selection functions) is 1.\n"
+"This confirms that minors of full-rank matrices are non-zero, which is the key\n"
+"property used in Support-Minor attacks."
+msgstr ""
+
+#: Game.Levels.UOV.L07_Capstone
+msgid "**Congratulations!** You have proved the UOV correctness theorem!\n"
+"\n"
+"In 3 tactic lines, you showed that the UOV signature scheme is correct:\n"
+"if the signer produces sigma = S^{-1}(w) where F(w) = y,\n"
+"then the verifier always accepts because P(sigma) = y.\n"
+"\n"
+"This is the **Schema** stage of APOS: you synthesized linear maps, quadratic forms,\n"
+"invertibility, and composition into a coherent cryptographic system.\n"
+"\n"
+"The full UOV scheme adds hashing (to generate y from a message m) and random\n"
+"vinegar selection, but the algebraic core is exactly what you just proved.\n"
+"\n"
+"Next: **MinRank World**, where you will formalize the MinRank problem and its\n"
+"connection to cryptographic attacks."
+msgstr ""
+
+#: Game
+msgid "Cryptography in Lean 4"
+msgstr ""
+
+#. §0: `Matrix.det_smul`
+#. §1: `(A : Matrix n n R) (c : R)`
+#: Game.Levels.MinRank.L03_RankBound
+msgid "## Scalar Multiples and Determinants\n"
+"\n"
+"For an n x n matrix A and scalar lambda:\n"
+"\n"
+"    det(lambda * A) = lambda^n * det(A)\n"
+"\n"
+"This follows because scaling a matrix by lambda scales every row by lambda,\n"
+"and the determinant is multilinear in the rows.\n"
+"\n"
+"### Cryptographic Context\n"
+"\n"
+"In MinRank, we study how the determinant of a linear combination Sum lambda_i M_i\n"
+"depends on the coefficients lambda_i. The formula det(lambda * A) = lambda^n * det(A)\n"
+"is the simplest case — a single matrix scaled by one coefficient.\n"
+"\n"
+"### Your Task\n"
+"\n"
+"Prove that det(lambda * A) = lambda^n * det(A) for an\n"
+"n x n matrix.\n"
+"\n"
+"### Strategy\n"
+"\n"
+"Use the lemma §0, which takes arguments in the order\n"
+"§1."
+msgstr ""
+
+#. §0: `rw`
+#. §1: `exact`
+#. §2: `apply`
+#. §3: `simp`
+#. §4: `ring`
+#: Game.Levels.Tutorial
+msgid "Welcome to the **Tutorial World**! This world assumes you have never used Lean 4 before.\n"
+"\n"
+"We will cover the most fundamental tactics you need for every proof:\n"
+"- §0 (rewrite): substitute a hypothesis or known identity into your goal.\n"
+"- §1: provide a term that precisely matches the goal.\n"
+"- §2: reduce a goal to a simpler sub-goal.\n"
+"- §3: automatic simplification.\n"
+"- §4: automatic polynomial identity proving.\n"
+"\n"
+"These five tactics form the backbone of every Lean proof you will write in the\n"
+"cryptography worlds ahead."
+msgstr ""
+
+#. §0: `m`
+#. §1: `n`
+#. §2: `F`
+#. §3: `Matrix (Fin m) (Fin n) F`
+#. §4: `1`
+#. §5: `A * 1 = A`
+#. §6: `1 * A = A`
+#. §7: `A`
+#. §8: `A`
+#. §9: `Matrix.mul_one`
+#. §10: `exact`
+#: Game.Levels.MatrixAlgebra.L01_MatrixMul
+msgid "## Matrix Multiplication in Mathlib\n"
+"\n"
+"In Mathlib, a matrix with §0 rows and §1 columns over a field §2 is written as\n"
+"§3.\n"
+"\n"
+"Matrix multiplication is defined as:\n"
+"\n"
+"    (A * B)_ij = Sum_k A_ik * B_kj\n"
+"\n"
+"The identity matrix §4 satisfies §5 and §6.\n"
+"\n"
+"### Your Task\n"
+"\n"
+"Prove that multiplying any matrix §7 by the identity matrix (of compatible size)\n"
+"on the right gives back §8.\n"
+"\n"
+"### Strategy\n"
+"\n"
+"The lemma §9 states exactly this. Use §10 to close the goal.\n"
+"\n"
+"### Cryptographic Context\n"
+"\n"
+"In UOV, the public key transformation is a matrix-vector product. Verifying that\n"
+"multiplication by the identity leaves a matrix unchanged is the simplest case of\n"
+"verifying a linear map's correctness."
+msgstr ""
+
+#. §0: `A`
+#. §1: `Aᵀ`
+#. §2: `Matrix.transpose A`
+#. §3: `(A * B)ᵀ = Bᵀ * Aᵀ`
+#. §4: `Matrix.transpose_mul`
+#: Game.Levels.MatrixAlgebra.L04_Transpose
+msgid "## Matrix Transpose\n"
+"\n"
+"The **transpose** of a matrix §0, written §1 in Mathlib (or §2),\n"
+"flips rows and columns: (A^T)_ij = A_ji.\n"
+"\n"
+"A key identity is:\n"
+"\n"
+"    (A * B)^T = B^T * A^T\n"
+"\n"
+"Note the **reversal** of order — this is crucial when manipulating matrix expressions.\n"
+"\n"
+"### Your Task\n"
+"\n"
+"Prove that §3.\n"
+"\n"
+"### Strategy\n"
+"\n"
+"Use the lemma §4.\n"
+"\n"
+"### Cryptographic Context\n"
+"\n"
+"In UOV, the public map is often written as P(x) = x^T * P * x\n"
+"where P is a matrix of public-key coefficients. Transpose identities appear when\n"
+"manipulating such quadratic forms."
+msgstr ""
+
+#. §0: `simp`
+#. §1: `simp`
+#. §2: `simp`
+#. §3: `a + 0 = a`
+#. §4: `a * 1 = a`
+#. §5: `n + 0 = n`
+#. §6: `n`
+#. §7: `n + 0 = n`
+#. §8: `simp`
+#. §9: `simp`
+#: Game.Levels.Tutorial.L04_Simp
+msgid "## The §0 Tactic\n"
+"\n"
+"The **§1** tactic automatically simplifies the goal using a large database of\n"
+"simplification lemmas. It is your auto-pilot for routine algebraic steps.\n"
+"\n"
+"### How It Works\n"
+"\n"
+"§2 rewrites terms using identities like:\n"
+"- §3\n"
+"- §4\n"
+"- §5\n"
+"\n"
+"It keeps applying these rules until no more simplifications are possible.\n"
+"\n"
+"### Your Task\n"
+"\n"
+"Prove that for any natural number §6, we have §7.\n"
+"\n"
+"This is trivially true by the definition of addition, and §8 handles it\n"
+"automatically.\n"
+"\n"
+"### Mathematical Context\n"
+"\n"
+"In multivariate cryptography, polynomial systems often have trivial simplifications\n"
+"(removing zero terms, multiplying by one). The §9 tactic automates these\n"
+"bookkeeping steps so you can focus on the interesting mathematics."
+msgstr ""
+
+#: Game.Levels.MinRank.L04_Minor
+msgid "Type: rw [Matrix.submatrix_id_id]"
+msgstr ""
+
+#: Game.Levels.UOV.L07_Capstone
+msgid "Step 1: Unfold composition. Type: show F (e (e.symm w)) = y"
+msgstr ""
+
+#: Game.Levels.MatrixAlgebra
+msgid "Matrix Algebra World"
+msgstr ""
+
+#. §0: `LinearMap.comp_apply`
+#: Game.Levels.UOV.L01_LinearMap
+msgid "Use §0. Type: exact LinearMap.comp_apply g f x"
 msgstr ""

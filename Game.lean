@@ -1,28 +1,39 @@
-import Game.Levels.DemoWorld
+import Game.Levels.Tutorial
+import Game.Levels.MatrixAlgebra
+import Game.Levels.UOV
+import Game.Levels.MinRank
 
--- Here's what we'll put on the title screen
-Title "Hello World Game"
+Title "Mathematical Cryptography in Lean 4"
 Introduction
 "
-This text appears on the starting page where one selects the world/level to play.
-You can use **markdown**.
+Welcome to **Mathematical Cryptography in Lean 4**!
+
+This game takes you from Lean 4 novice to capable reader and writer of research-grade
+Lean 4 / Mathlib proofs in multivariate and algebraic cryptography, including
+**UOV** (Unbalanced Oil and Vinegar), **MinRank**, and **Support-Minor** models.
+
+You should have a Master's degree in Mathematics but no prior Lean experience is required.
+
+## Worlds
+
+1. **Tutorial World** — Learn the basics of Lean 4: rewriting, equality, and simple automation.
+2. **Matrix Algebra World** — Matrices, determinants, and rank in Mathlib.
+3. **UOV World** — The Unbalanced Oil-and-Vinegar signature scheme and its verification.
+4. **MinRank World** — The MinRank problem and its cryptographic significance.
+
+Each world follows the **APOS** pedagogical framework (Action → Process → Object → Schema).
 "
 
 Info "
-Here you can put additional information about the game. It is accessible
-from the starting through the drop-down menu.
+**Game version:** 1.0
 
-For example: Game version, Credits, Link to Github and Zulip, etc.
+This game was built using the lean4game framework with Lean 4 and Mathlib.
 
-Use **markdown**.
+**Credits:** Built for cryptography researchers learning formal verification.
 "
 
-/-! Information to be displayed on the servers landing page. -/
 Languages "en"
-CaptionShort "Game Template"
-CaptionLong "You should use this game as a template for your own game and add your own levels."
--- Prerequisites "" -- add this if your game depends on other games
--- CoverImage "images/cover.png"
+CaptionShort "Cryptography in Lean 4"
+CaptionLong "Learn mathematical cryptography — UOV, MinRank, and more — while mastering Lean 4 and Mathlib from scratch."
 
-/-! Build the game. Show's warnings if it found a problem with your game. -/
 MakeGame
