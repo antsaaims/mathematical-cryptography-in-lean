@@ -6,7 +6,7 @@
     "ghcr.io/devcontainers/features/python:1": { "version": "3" }
   },
   "onCreateCommand": "bash .devcontainer/setup.sh",
-  "postAttachCommand": "bash .devcontainer/run-server.sh",
+  "postCreateCommand": "bash .devcontainer/run-server.sh",
   "customizations": {
     "vscode": {
       "settings": {

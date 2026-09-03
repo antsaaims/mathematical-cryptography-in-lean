@@ -30,6 +30,8 @@ Info "
 This game was built using the lean4game framework with Lean 4 and Mathlib.
 
 **Credits:** Built for cryptography researchers learning formal verification.
+
+**Found a bug or have feedback?** [Open a GitHub Issue](https://github.com/antsaaims/mathematical-cryptography-in-lean/issues)
 "
 
 Languages "en"

@@ -118,3 +118,27 @@ AGENT EXECUTION & SELF-CORRECTION LOOP:
      Rewrite the code/docstrings and return to Step 3.
 5. Success State: Mark the level complete ONLY when both `lake build` returns zero errors AND the Peer Review Audit passes 100% of checks cleanly.
 6. Documentation Update: Ensure `TacticDoc` and `TheoremDoc` reflect newly introduced concepts in the player's inventory.
+
+---
+
+STEP 7: DEPLOYMENT & SET-AND-FORGET BEST PRACTICES
+
+After all levels compile cleanly and pass the Peer Review Audit:
+
+1. Dev Container Verification:
+   - Ensure `.devcontainer/devcontainer.json` uses `image` (not custom `build.dockerfile`) to avoid permission errors on GitHub Codespaces.
+   - Ensure `setup.sh` does NOT call `lake update -R` (which resets Mathlib cache and breaks builds).
+   - Verify the Codespace can be created and rebuilt without entering recovery mode.
+
+2. GitHub Issues Link:
+   - Add a link to the repository's GitHub Issues page in `Game.lean`'s `Info` section so players can submit feedback directly if they find a bug.
+
+3. Tag a Release:
+   - Tag the release in Git (e.g., `v1.0.0`) so the game points to a stable version.
+   - Point deployment to the release tag rather than the `main` branch.
+   - Command: `git tag v1.0.0 && git push origin v1.0.0`
+
+4. Exhaustive AI Playtesting:
+   - Before tagging v1.0, ensure the agentic AI has verified that all tactics work smoothly in every level.
+   - Run `lake build` one final time to confirm zero errors.
+   - Confirm that no level has a proof longer than 15 lines.

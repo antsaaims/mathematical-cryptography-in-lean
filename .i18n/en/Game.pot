@@ -783,14 +783,6 @@ msgstr ""
 msgid "The lemma §0 gives det(1) = 1. Type: exact Matrix.det_one"
 msgstr ""
 
-#: Game
-msgid "**Game version:** 1.0\n"
-"\n"
-"This game was built using the lean4game framework with Lean 4 and Mathlib.\n"
-"\n"
-"**Credits:** Built for cryptography researchers learning formal verification."
-msgstr ""
-
 #. §0: `Matrix.transpose_submatrix`
 #: Game.Levels.MatrixAlgebra.L05_Submatrix
 msgid "Use §0. Type: exact Matrix.transpose_submatrix A r c"
@@ -1121,6 +1113,16 @@ msgid "This is the fundamental identity underlying UOV verification:\n"
 "\n"
 "The public key P is applied to the signature sigma, which equals\n"
 "applying the secret linear map S first, then the central map F."
+msgstr ""
+
+#: Game
+msgid "**Game version:** 1.0\n"
+"\n"
+"This game was built using the lean4game framework with Lean 4 and Mathlib.\n"
+"\n"
+"**Credits:** Built for cryptography researchers learning formal verification.\n"
+"\n"
+"**Found a bug or have feedback?** [Open a GitHub Issue](https://github.com/antsaaims/mathematical-cryptography-in-lean/issues)"
 msgstr ""
 
 #. §0: `apply`
