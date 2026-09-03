@@ -1,6 +1,10 @@
 {
   "forwardPorts": [3000],
-  "build": {"dockerfile": "Dockerfile"},
+  "image": "mcr.microsoft.com/devcontainers/base:ubuntu-22.04",
+  "features": {
+    "ghcr.io/devcontainers/features/node:1": { "version": "18" },
+    "ghcr.io/devcontainers/features/python:1": { "version": "3" }
+  },
   "onCreateCommand": "bash .devcontainer/setup.sh",
   "postAttachCommand": "bash .devcontainer/run-server.sh",
   "customizations": {
