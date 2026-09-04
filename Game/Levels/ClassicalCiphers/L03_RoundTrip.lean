@@ -1,6 +1,7 @@
 import Game.Metadata
 import Mathlib.Data.ZMod.Basic
 import Mathlib.Tactic.Common
+import Mathlib.Tactic.Ring
 
 World "ClassicalCiphers"
 Level 3
