@@ -19,6 +19,18 @@
       //   "runOn": "folderOpen"
       // }
     },
+    {
+      "label": "game: start server",
+      "detail": "manually (re)start the lean4game client + relay (already runs automatically on Codespace start via postStartCommand)",
+      "type": "shell",
+      "command": "bash .devcontainer/run-server.sh",
+      "isBackground": true,
+      "problemMatcher": [],
+      "presentation": {
+        "reveal": "always",
+        "panel": "new"
+      },
+    },
   ],
   "inputs": [
     {
