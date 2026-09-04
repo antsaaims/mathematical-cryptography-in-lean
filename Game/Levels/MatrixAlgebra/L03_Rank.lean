@@ -51,4 +51,3 @@ products of simpler ones.
 operation*, not just a single value.
 "
 
-NewTactic exact

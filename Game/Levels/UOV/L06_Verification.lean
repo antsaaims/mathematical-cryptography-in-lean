@@ -57,5 +57,3 @@ which is exactly the verification condition!
 inverse as objects with algebraic properties (`e.apply_symm_apply`), not
 individual computations.
 "
-
-NewTactic exact

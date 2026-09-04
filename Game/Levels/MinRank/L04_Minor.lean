@@ -54,5 +54,4 @@ property used in Support-Minor attacks.
 rather than a single mechanical step.
 "
 
-NewTactic rw exact
 NewDefinition Matrix.submatrix

@@ -76,4 +76,3 @@ Next: **MinRank World**, where you will formalize the MinRank problem and its
 connection to cryptographic attacks.
 "
 
-NewTactic rw exact

@@ -77,5 +77,4 @@ and Object (Level 5-6) material from this entire world into the single identity
 that powers MinRank attacks.
 "
 
-NewTactic rw exact
 NewDefinition Matrix.det

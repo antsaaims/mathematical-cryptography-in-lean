@@ -50,5 +50,4 @@ low rank.
 **APOS stage:** Action — a short, explicit chain of mechanical steps.
 "
 
-NewTactic rw exact
 NewDefinition Matrix.det

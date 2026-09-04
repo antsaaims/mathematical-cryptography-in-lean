@@ -47,5 +47,3 @@ manipulate arbitrary matrix expressions involving sums, products, and transposes
 **APOS stage:** Object — transpose is treated as a structural operation that
 distributes over linear combinations, not a one-off computation.
 "
-
-NewTactic exact

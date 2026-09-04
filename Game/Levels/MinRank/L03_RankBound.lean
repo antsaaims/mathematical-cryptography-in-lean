@@ -55,5 +55,3 @@ algebraic challenge.
 **APOS stage:** Process — a general law describing how determinant behaves
 under scaling, for every matrix and scalar at once.
 "
-
-NewTactic exact

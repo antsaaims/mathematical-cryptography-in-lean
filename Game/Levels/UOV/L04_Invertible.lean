@@ -53,6 +53,4 @@ what we need for correctness.
 **APOS stage:** Process — invertibility is a general property of a *class* of maps
 (linear equivalences), not a one-off fact about a single map.
 "
-
-NewTactic exact
 NewDefinition LinearEquiv

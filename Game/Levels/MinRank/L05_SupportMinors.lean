@@ -51,5 +51,3 @@ matrices whose minors vanish — revealing the secret key structure.
 **APOS stage:** Object — treating 'the minors of M' as a structured object with
 its own vanishing behavior, the basis of the Support-Minor model.
 "
-
-NewTactic exact

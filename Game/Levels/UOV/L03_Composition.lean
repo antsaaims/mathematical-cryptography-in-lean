@@ -49,5 +49,3 @@ maps, and associativity guarantees we can regroup compositions as needed.
 **APOS stage:** Process — a structural law about *how composition behaves*, not
 just one computation.
 "
-
-NewTactic exact

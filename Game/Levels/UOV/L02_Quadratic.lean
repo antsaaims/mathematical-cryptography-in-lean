@@ -45,5 +45,3 @@ and `ring` can verify their algebraic properties.
 
 **APOS stage:** Action — a single, direct computation.
 "
-
-NewTactic ring

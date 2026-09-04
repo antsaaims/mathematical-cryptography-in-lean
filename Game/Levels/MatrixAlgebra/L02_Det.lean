@@ -49,6 +49,4 @@ indicating a rank deficiency.
 
 **APOS stage:** Action — a single, direct application of a known fact.
 "
-
-NewTactic exact
 NewDefinition Matrix.det

@@ -49,5 +49,4 @@ This is the Action stage: applying a known lemma directly.
 In the next level, we move to determinants.
 "
 
-NewTactic exact
 NewDefinition Matrix

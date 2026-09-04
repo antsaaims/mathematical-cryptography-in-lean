@@ -46,5 +46,3 @@ have low rank.
 
 **APOS stage:** Action — two explicit, mechanical simplification steps.
 "
-
-NewTactic rw rfl

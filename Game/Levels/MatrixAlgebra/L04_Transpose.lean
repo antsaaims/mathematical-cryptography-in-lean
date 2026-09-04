@@ -53,5 +53,4 @@ In quadratic-form-based cryptography (like UOV), transpose identities are pervas
 (transpose) interacts with another (multiplication).
 "
 
-NewTactic exact
 NewDefinition Matrix.transpose

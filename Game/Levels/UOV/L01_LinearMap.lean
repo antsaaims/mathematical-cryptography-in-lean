@@ -51,5 +51,4 @@ represents this fundamental operation.
 **APOS stage:** Action — a single, direct application of a known fact.
 "
 
-NewTactic exact
 NewDefinition LinearMap

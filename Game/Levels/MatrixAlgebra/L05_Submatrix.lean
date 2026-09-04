@@ -49,5 +49,4 @@ attack model. By treating a submatrix as a first-class object (not just a comput
 we enter the **Object** stage of APOS theory.
 "
 
-NewTactic exact
 NewDefinition Matrix.submatrix

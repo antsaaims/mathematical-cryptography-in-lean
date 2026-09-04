@@ -64,4 +64,4 @@ and Vinegar signature scheme.
 (Object) material from this whole world into one synthesized fact.
 "
 
-NewTactic rw rfl
+NewTactic rfl
