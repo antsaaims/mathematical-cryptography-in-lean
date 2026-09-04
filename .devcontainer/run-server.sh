@@ -18,6 +18,21 @@ echo "Node: $(node --version 2>&1)"
 GAME_DIR="$PWD"
 LEAN4GAME_DIR="$GAME_DIR/../lean4game"
 
+# Clone lean4game if post-create.sh hasn't run yet (e.g. manual invocation),
+# pinned to the tag matching the GameServer Lean dependency.
+if [ ! -d "$LEAN4GAME_DIR" ]; then
+  GAME_TAG="v$(cat "$GAME_DIR/lean-toolchain" | sed -E 's/^.*:v//')"
+  echo "lean4game not cloned yet — cloning $GAME_TAG..."
+  git clone --branch "$GAME_TAG" --depth 1 \
+    https://github.com/leanprover-community/lean4game.git "$LEAN4GAME_DIR"
+fi
+
+# ── Patch lean4game for POSIX path normalization ──
+# Must run AFTER the clone above: it patches ../lean4game (what actually
+# gets built into the served client), not just the .lake/packages/GameServer
+# Lean dependency. See PATH_FIX_TRACE.md for details.
+bash "$GAME_DIR/scripts/fix-game-paths.sh" || true
+
 # Check if lean4game has been built; if not, build it now
 if [ ! -f "$LEAN4GAME_DIR/client/dist/index.html" ]; then
   echo "lean4game not built yet — building now..."

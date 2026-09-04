@@ -43,6 +43,8 @@ Conclusion
 Linear combinations of matrices are the basic objects in the MinRank problem.
 The goal is to find coefficients lambda_i making a particular linear combination
 have low rank.
+
+**APOS stage:** Action — two explicit, mechanical simplification steps.
 "
 
 NewTactic rw rfl

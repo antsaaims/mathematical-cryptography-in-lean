@@ -49,6 +49,9 @@ S^{-1} exists precisely because S is a linear equivalence.
 In the signing procedure, we compute sigma = S^{-1}(o, v). The fact that
 S composed with S^{-1} = id guarantees that S(sigma) = (o, v), which is
 what we need for correctness.
+
+**APOS stage:** Process — invertibility is a general property of a *class* of maps
+(linear equivalences), not a one-off fact about a single map.
 "
 
 NewTactic exact

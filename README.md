@@ -2,9 +2,9 @@
 
 [![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/antsaaims/mathematical-cryptography-in-lean)
 
-An interactive Lean 4 game that teaches mathematical cryptography concepts through guided proofs: matrix algebra, the UOV signature scheme, and minimum-rank problems.
+Learn to write machine-checked proofs *and* modern cryptography at the same time — no prior experience with either required. Play through guided, bite-sized levels that take you from your very first Lean tactic to proving the correctness of a real post-quantum signature scheme: matrix algebra, the UOV (Unbalanced Oil and Vinegar) signature scheme, and MinRank problems.
 
-Built with [lean4game](https://github.com/leanprover-community/lean4game/).
+Built with [lean4game](https://github.com/leanprover-community/lean4game/), the same engine behind the [Natural Number Game](https://adam.math.hhu.de/).
 
 ## How to Play
 
@@ -36,9 +36,10 @@ Prerequisites: Node.js 22+, elan, and lake.
     # Install dependencies and build the game
     lake build
 
-    # Clone and build lean4game
+    # Clone and build lean4game, pinned to the tag in lean-toolchain (e.g. v4.23.0)
     cd ..
-    git clone https://github.com/leanprover-community/lean4game.git
+    git clone --branch "v$(cat mathematical-cryptography-in-lean/lean-toolchain | sed -E 's/^.*:v//')" \
+      https://github.com/leanprover-community/lean4game.git
     cd lean4game
     npm install
     npm run build

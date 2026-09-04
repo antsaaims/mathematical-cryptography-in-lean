@@ -47,6 +47,9 @@ trivial case of the Support-Minor principle.
 
 In the non-trivial case, the attacker searches for linear combinations of public-key
 matrices whose minors vanish — revealing the secret key structure.
+
+**APOS stage:** Object — treating 'the minors of M' as a structured object with
+its own vanishing behavior, the basis of the Support-Minor model.
 "
 
 NewTactic exact

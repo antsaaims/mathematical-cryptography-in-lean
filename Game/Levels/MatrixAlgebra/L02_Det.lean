@@ -46,6 +46,8 @@ Conclusion
 The determinant of the identity is 1 — the simplest non-trivial determinant fact.
 In the MinRank problem, we search for combinations where the determinant drops to 0,
 indicating a rank deficiency.
+
+**APOS stage:** Action — a single, direct application of a known fact.
 "
 
 NewTactic exact

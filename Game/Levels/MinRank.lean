@@ -39,5 +39,6 @@ You will formalize:
 
 ### Prerequisites
 
-Complete the Tutorial World and Matrix Algebra World first.
+Complete the Tutorial, Classical Ciphers, Modular Arithmetic, and Matrix Algebra
+Worlds first.
 "

@@ -21,7 +21,12 @@ In multivariate and algebraic cryptography, matrices over finite fields are ever
 This world teaches you how to work with matrices in Mathlib: multiplication, determinants,
 transpose, rank, and submatrices. We follow the APOS pedagogical framework.
 
+Matrices over a field are a genuinely richer algebraic object than the commutative
+ring `ZMod n` you worked with in Modular Arithmetic World: matrix multiplication is
+*not* commutative in general, which is exactly the extra structure UOV and MinRank
+exploit as a cryptographic trapdoor.
+
 ### Prerequisites
 
-Complete the Tutorial World first.
+Complete the Tutorial, Classical Ciphers, and Modular Arithmetic Worlds first.
 "

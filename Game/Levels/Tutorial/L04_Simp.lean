@@ -48,6 +48,9 @@ for the hard parts.
 
 In the UOV world, you will use `simp` to simplify polynomial evaluations after
 substituting oil and vinegar variables.
+
+**APOS stage:** Process — you no longer perform each simplification step by hand;
+you invoke one automated routine that repeats the pattern for you.
 "
 
 NewTactic simp

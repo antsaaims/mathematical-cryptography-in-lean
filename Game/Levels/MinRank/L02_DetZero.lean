@@ -46,6 +46,8 @@ When all coefficients are zero, the linear combination is the zero matrix — wh
 has determinant zero and rank zero. This is the trivial (degenerate) solution to
 MinRank. The interesting challenge is finding non-trivial lambda_i that produce
 low rank.
+
+**APOS stage:** Action — a short, explicit chain of mechanical steps.
 "
 
 NewTactic rw exact

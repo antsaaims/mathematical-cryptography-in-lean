@@ -42,6 +42,8 @@ Conclusion
 The expansion of (a+b)^2 is the simplest non-trivial quadratic identity.
 In UOV, the central map and public key are systems of such quadratic forms,
 and `ring` can verify their algebraic properties.
+
+**APOS stage:** Action — a single, direct computation.
 "
 
 NewTactic ring

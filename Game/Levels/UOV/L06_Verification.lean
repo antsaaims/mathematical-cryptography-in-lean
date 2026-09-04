@@ -52,6 +52,10 @@ recovers w. Combined with F(w) = y, this gives:
     P(sigma) = F(S(sigma)) = F(w) = y
 
 which is exactly the verification condition!
+
+**APOS stage:** Object — reasoning about the linear equivalence `e` and its
+inverse as objects with algebraic properties (`e.apply_symm_apply`), not
+individual computations.
 "
 
 NewTactic exact

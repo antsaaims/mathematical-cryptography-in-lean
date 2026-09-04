@@ -48,6 +48,9 @@ The transpose reverses multiplication order. This reversal is a common source of
 errors in hand calculations, but Lean keeps us honest.
 
 In quadratic-form-based cryptography (like UOV), transpose identities are pervasive.
+
+**APOS stage:** Process — another structural law about how an operation
+(transpose) interacts with another (multiplication).
 "
 
 NewTactic exact

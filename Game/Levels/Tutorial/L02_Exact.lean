@@ -39,6 +39,8 @@ the goal is already present among your hypotheses.
 
 In the UOV signature scheme, the final verification step often reduces to an identity
 that is directly available, and `exact` closes the proof.
+
+**APOS stage:** Action — a single, explicit, mechanical step.
 "
 
 NewTactic exact

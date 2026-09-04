@@ -61,14 +61,20 @@ This is the algebraic foundation of MinRank attacks:
 
 ## What You Have Learned
 
-Across all four worlds, you have:
-1. Mastered the core Lean tactics: `rw`, `exact`, `apply`, `simp`, `ring`.
-2. Worked with matrices, determinants, transposes, and submatrices in Mathlib.
-3. Proved the correctness of the UOV signature scheme.
-4. Formalized key identities underlying the MinRank and Support-Minor models.
+Across all six worlds, you have:
+1. Mastered the core Lean tactics: `rw`, `exact`, `apply`, `simp`, `ring`, `decide`, `unfold`.
+2. Formalized classical ciphers and modular arithmetic, including why
+   Diffie-Hellman key exchange is correct.
+3. Worked with matrices, determinants, transposes, and submatrices in Mathlib.
+4. Proved the correctness of the UOV signature scheme.
+5. Formalized key identities underlying the MinRank and Support-Minor models.
 
 You are now equipped to read and write research-grade Lean 4 / Mathlib proofs in
 algebraic cryptography. Well done!
+
+**APOS stage:** Schema — synthesizing the Action (Level 1-2), Process (Level 3-4),
+and Object (Level 5-6) material from this entire world into the single identity
+that powers MinRank attacks.
 "
 
 NewTactic rw exact

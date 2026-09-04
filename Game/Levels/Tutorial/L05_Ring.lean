@@ -45,6 +45,10 @@ in verifying multivariate signature schemes.
 
 In the UOV world, the final verification identity is a polynomial identity over a
 finite field, and `ring` can close it.
+
+**APOS stage:** Process — `ring` interiorizes the entire family of polynomial
+manipulations into one automated routine, rather than a sequence of individual
+rewrites.
 "
 
 NewTactic ring

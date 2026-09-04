@@ -51,6 +51,9 @@ determinants interact with linear algebra operations.
 In MinRank, the determinant of Sum lambda_i M_i is a polynomial in the
 lambda_i. Finding coefficients that make this polynomial zero is the core
 algebraic challenge.
+
+**APOS stage:** Process — a general law describing how determinant behaves
+under scaling, for every matrix and scalar at once.
 "
 
 NewTactic exact

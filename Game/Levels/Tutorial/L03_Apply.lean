@@ -47,6 +47,8 @@ we frequently chain implications: if the adversary wins, then this game reduces 
 that game, which implies a computational assumption is broken.
 
 Each `apply` is one link in that chain.
+
+**APOS stage:** Action — two explicit, mechanical steps chained together.
 "
 
 NewTactic apply

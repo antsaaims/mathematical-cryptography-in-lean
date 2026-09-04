@@ -45,6 +45,9 @@ Conclusion
 Associativity of composition means the order of grouping doesn't matter.
 In UOV, the public key P = F composed with S involves composing
 maps, and associativity guarantees we can regroup compositions as needed.
+
+**APOS stage:** Process — a structural law about *how composition behaves*, not
+just one computation.
 "
 
 NewTactic exact

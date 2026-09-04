@@ -48,6 +48,9 @@ P(sigma) = F(S(sigma)).
 
 The public key P is applied to the signature sigma, which equals
 applying the secret linear map S first, then the central map F.
+
+**APOS stage:** Object — the public key `P` itself is now treated as one
+first-class object (a composition), not merely a sequence of steps to perform.
 "
 
 NewTactic exact

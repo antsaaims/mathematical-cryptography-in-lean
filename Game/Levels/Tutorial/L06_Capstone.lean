@@ -50,8 +50,13 @@ You now know the five core tactics (`rw`, `exact`, `apply`, `simp`, `ring`) that
 form the backbone of every Lean proof. You also saw how polynomial identities
 underpin cryptographic protocols like Diffie-Hellman.
 
-Next up: **Matrix Algebra World**, where we formalize matrices, determinants, and
-rank — the building blocks of the UOV and MinRank cryptographic schemes.
+Next up: **Classical Ciphers World**, where these same tactics start proving facts
+about real (if historical) cryptography, before we build up to matrices, UOV, and
+MinRank.
+
+**APOS stage:** Schema (mini) — combining all five tactics is a first taste of
+synthesis, though the real Schema-level capstones start once each world has its
+own object of study.
 "
 
 NewTactic rw exact apply simp ring

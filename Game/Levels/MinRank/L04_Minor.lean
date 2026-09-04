@@ -49,6 +49,9 @@ Conclusion
 The determinant of the identity submatrix (with identity selection functions) is 1.
 This confirms that minors of full-rank matrices are non-zero, which is the key
 property used in Support-Minor attacks.
+
+**APOS stage:** Process — combining two general simplification laws in sequence
+rather than a single mechanical step.
 "
 
 NewTactic rw exact

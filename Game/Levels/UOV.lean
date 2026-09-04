@@ -42,5 +42,7 @@ quadratic forms to the full verification identity.
 
 ### Prerequisites
 
-Complete the Tutorial World and Matrix Algebra World first.
+Complete the Tutorial, Classical Ciphers, Modular Arithmetic, and Matrix Algebra
+Worlds first — UOV combines the modular exponentiation ideas from Modular
+Arithmetic World with the linear and quadratic maps from Matrix Algebra World.
 "

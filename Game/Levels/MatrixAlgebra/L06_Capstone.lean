@@ -59,6 +59,9 @@ MinRank and Support-Minor attacks.
 
 Next: **UOV World**, where you will prove the correctness of the Unbalanced Oil
 and Vinegar signature scheme.
+
+**APOS stage:** Schema — combining the determinant (Action/Process) and submatrix
+(Object) material from this whole world into one synthesized fact.
 "
 
 NewTactic rw rfl

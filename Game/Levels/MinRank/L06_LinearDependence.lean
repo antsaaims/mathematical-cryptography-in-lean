@@ -43,6 +43,9 @@ matrix expressions in MinRank attacks.
 
 Combined with `Matrix.transpose_mul` (from the Matrix Algebra world), you can now
 manipulate arbitrary matrix expressions involving sums, products, and transposes.
+
+**APOS stage:** Object — transpose is treated as a structural operation that
+distributes over linear combinations, not a one-off computation.
 "
 
 NewTactic exact

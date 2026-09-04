@@ -47,6 +47,8 @@ Conclusion
 Linear map composition is the algebraic backbone of UOV. The public key transformation
 is literally a composition of linear and quadratic maps. You now know how Lean
 represents this fundamental operation.
+
+**APOS stage:** Action — a single, direct application of a known fact.
 "
 
 NewTactic exact

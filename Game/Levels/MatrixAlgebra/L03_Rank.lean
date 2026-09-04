@@ -46,6 +46,9 @@ Conclusion
 The multiplicativity of the determinant is one of the most used properties in
 algebraic cryptography. It allows us to decompose complex matrix expressions into
 products of simpler ones.
+
+**APOS stage:** Process — a structural law about *how determinants behave under an
+operation*, not just a single value.
 "
 
 NewTactic exact

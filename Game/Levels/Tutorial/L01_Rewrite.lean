@@ -46,6 +46,8 @@ Excellent! You just proved your first Lean theorem using `rw`.
 In cryptography, we constantly substitute known values (keys, signatures, hashes)
 into equations to verify correctness. The `rw` tactic is the Lean analogue of this
 substitution step.
+
+**APOS stage:** Action — a single, explicit, mechanical step.
 "
 
 NewTactic rw
