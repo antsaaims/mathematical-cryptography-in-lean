@@ -18,12 +18,12 @@ echo "Node: $(node --version 2>&1)"
 GAME_DIR="$PWD"
 LEAN4GAME_DIR="$GAME_DIR/../lean4game"
 
-# Clone lean4game if post-create.sh hasn't run yet (e.g. manual invocation),
-# pinned to the tag matching the GameServer Lean dependency.
+# Clone lean4game if post-create.sh hasn't run yet (e.g. manual invocation).
+# Use `main`, not the tag matching lean-toolchain - see the comment in
+# post-create.sh for why (gitpkg.vercel.app 402 error, fixed in lean4game PR #431).
 if [ ! -d "$LEAN4GAME_DIR" ]; then
-  GAME_TAG="v$(cat "$GAME_DIR/lean-toolchain" | sed -E 's/^.*:v//')"
-  echo "lean4game not cloned yet — cloning $GAME_TAG..."
-  git clone --branch "$GAME_TAG" --depth 1 \
+  echo "lean4game not cloned yet — cloning main..."
+  git clone --branch main --depth 1 \
     https://github.com/leanprover-community/lean4game.git "$LEAN4GAME_DIR"
 fi
 

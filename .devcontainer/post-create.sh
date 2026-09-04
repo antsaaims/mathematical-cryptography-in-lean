@@ -26,14 +26,16 @@ lake build
 # into .lake/packages/GameServer (used to compile the game's Lean library). The
 # npm-based client + relay must live in a separate sibling checkout, per
 # https://github.com/leanprover-community/lean4game/blob/main/doc/running_locally.md
-# Pin it to the same tag as the GameServer Lean dependency (derived from
-# lean-toolchain, e.g. "leanprover/lean4:v4.23.0" -> "v4.23.0") so the client
-# and server protocol versions match.
+#
+# Use `main`, not the tag matching lean-toolchain: older tags (including the one
+# matching our current toolchain) predate PR #431 (merged 2026-01-08), which fixed
+# `npm install` failing with "402 Payment Required" from the now-defunct
+# gitpkg.vercel.app service that some transitive dependencies used to fetch
+# vscode-lean4 subdirectories. See leanprover-community/lean4game#416.
 LEAN4GAME_DIR="$VSCODE_PWD/../lean4game"
-GAME_TAG="v$(cat "$VSCODE_PWD/lean-toolchain" | sed -E 's/^.*:v//')"
 if [ ! -d "$LEAN4GAME_DIR" ]; then
-  echo "=== Cloning lean4game ($GAME_TAG) into $LEAN4GAME_DIR ==="
-  git clone --branch "$GAME_TAG" --depth 1 \
+  echo "=== Cloning lean4game (main) into $LEAN4GAME_DIR ==="
+  git clone --branch main --depth 1 \
     https://github.com/leanprover-community/lean4game.git "$LEAN4GAME_DIR"
 fi
 

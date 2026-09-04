@@ -36,10 +36,11 @@ Prerequisites: Node.js 22+, elan, and lake.
     # Install dependencies and build the game
     lake build
 
-    # Clone and build lean4game, pinned to the tag in lean-toolchain (e.g. v4.23.0)
+    # Clone and build lean4game. Use `main`, not the tag matching lean-toolchain -
+    # older tags predate a fix for npm install failing with "402 Payment Required"
+    # from the now-defunct gitpkg.vercel.app service (leanprover-community/lean4game#416).
     cd ..
-    git clone --branch "v$(cat mathematical-cryptography-in-lean/lean-toolchain | sed -E 's/^.*:v//')" \
-      https://github.com/leanprover-community/lean4game.git
+    git clone --branch main https://github.com/leanprover-community/lean4game.git
     cd lean4game
     npm install
     npm run build
