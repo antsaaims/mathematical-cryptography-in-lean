@@ -168,14 +168,26 @@ patch_dir() {
     if ! grep -q 'fix-game-paths' "$APP_TSX"; then
       if grep -q 'const appRef' "$APP_TSX"; then
         echo "[fix-game-paths]   SKIP client/src/app.tsx: appRef already present"
+      elif ! grep -q 'const infoviewRef = useRef<HTMLDivElement>(null)' "$APP_TSX"; then
+        # This commit's app.tsx doesn't declare infoviewRef at all (that ref
+        # lives in level.tsx instead) -- the anchor this patch depends on
+        # doesn't exist here, so there's nothing safe to hang appRef's
+        # declaration off. Skip the whole enhancement rather than risk the
+        # JSX sed below applying on its own and leaving a `ref={appRef}`
+        # with no matching declaration (a hard `ReferenceError` crash, not
+        # a cosmetic gap -- this bit a real session on 2026-09-06).
+        echo "[fix-game-paths]   SKIP client/src/app.tsx: infoviewRef anchor not found at this commit -- htmlElement wiring not applicable, skipping"
       else
         sed -i "s|const infoviewRef = useRef<HTMLDivElement>(null)|const infoviewRef = useRef<HTMLDivElement>(null)\n  const appRef = useRef<HTMLDivElement>(null) // [fix-game-paths] see htmlElement note below|" "$APP_TSX"
         sed -i "s|await _leanMonaco.start(leanMonacoOptions)|await _leanMonaco.start({ ...leanMonacoOptions, htmlElement: appRef.current ?? undefined }) // [fix-game-paths] pass a real wrapper element instead of leaving htmlElement undefined|" "$APP_TSX"
-        sed -i 's|<div className="app">|<div className="app" ref={appRef}>|' "$APP_TSX"
-        if grep -q 'appRef.current ?? undefined' "$APP_TSX" && grep -q 'ref={appRef}' "$APP_TSX"; then
+        if grep -q 'appRef.current ?? undefined' "$APP_TSX"; then
+          sed -i 's|<div className="app">|<div className="app" ref={appRef}>|' "$APP_TSX"
           echo "[fix-game-paths]   OK client/src/app.tsx: wired appRef as LeanMonaco htmlElement"
         else
-          echo "[fix-game-paths]   WARN client/src/app.tsx: pattern not fully matched, left partially patched -- check manually"
+          # The declaration or htmlElement sed didn't match -- do NOT apply
+          # the JSX ref sed, since a `ref={appRef}` with no declaration is a
+          # crash, not a degraded-but-working patch.
+          echo "[fix-game-paths]   WARN client/src/app.tsx: pattern not fully matched, left unpatched (no appRef declared, JSX ref intentionally not added) -- check manually"
         fi
       fi
     else

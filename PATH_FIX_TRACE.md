@@ -158,6 +158,53 @@ useEffect(() => {
 }, [leanMonaco])
 ```
 
+## Bug 4 — lean4game client/relay pinned to a commit far ahead of the game's GameServer, plus a patch-script regression that surfaced
+
+### Symptom
+
+`.devcontainer/{post-create,run-server}.sh` cloned the lean4game client/relay
+from `main` (necessary at the time — see the "Which checkout actually needs
+patching" note on the gitpkg.vercel.app 402 error), while this project's own
+`.lake/packages/GameServer` (the Lean-side library) stayed pinned to a much
+older commit matching `lean-toolchain`. By 2026-09, `main` had drifted a full
+year ahead and been through three Lean toolchain bumps the pinned GameServer
+never saw. This is a real, confirmed protocol-version mismatch, but **it
+turned out not to be the cause of the goal panel hanging on
+`$/lean/rpc/connect`** — see the "Update" note in
+[project memory](../../.claude/projects) `project_lean_server_coldstart.md`
+for the full story: the hang reproduces identically even after pinning both
+sides to the exact same commit, so that specific bug remains unexplained.
+
+### Fix (worth keeping regardless)
+
+Pinned both scripts to clone commit `7f6e045` (PR #431 — the gitpkg fix)
+instead of `main`: the one commit with that fix applied *before* the first
+toolchain bump 7 hours later, keeping protocol parity with this project's
+pinned GameServer. Bonus: at `7f6e045`, Bug 3 above hasn't been introduced
+yet — `level.tsx` already wires `setInfoviewElement` to its own real
+`infoviewRef` natively, so that patch correctly no-ops there.
+
+### Regression this surfaced: `fix-game-paths.sh`'s app.tsx patch could half-apply and crash
+
+The "Other hardening" `appRef`/`htmlElement` patch below assumes `app.tsx`
+declares `const infoviewRef = useRef<HTMLDivElement>(null)` (true on `main`,
+where Bug 3 exists) — but at `7f6e045`, `infoviewRef` doesn't exist in
+`app.tsx` at all (it's scoped entirely to `level.tsx`). The patch's
+declaration `sed` silently no-ops on the missing anchor, but the JSX `sed`
+(`<div className="app">` → `<div className="app" ref={appRef}>`) applied
+unconditionally regardless — leaving a reference to an undeclared `appRef`
+that crashes the entire `<App>` component (`ReferenceError: appRef is not
+defined`), not a degraded-but-working state. Fixed by making the JSX sed
+conditional on the earlier steps actually having matched, and by detecting
+the missing anchor up front and skipping the whole enhancement cleanly. See
+the updated `scripts/fix-game-paths.sh` for the exact guard.
+
+**Takeaway for future patch-script maintenance:** a script that patches
+someone else's fast-moving upstream source across commits cannot assume its
+own anchors still exist. Treat every "WARN ... partially patched" as a
+potential hard crash until verified in the browser (check the console for
+`ReferenceError`s), never as a merely cosmetic gap.
+
 ## Other, independent hardening applied at the same time
 
 - **React StrictMode double-invoking effects** (`client/src/index.tsx`):

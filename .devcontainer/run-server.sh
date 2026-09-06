@@ -19,12 +19,23 @@ GAME_DIR="$PWD"
 LEAN4GAME_DIR="$GAME_DIR/../lean4game"
 
 # Clone lean4game if post-create.sh hasn't run yet (e.g. manual invocation).
-# Use `main`, not the tag matching lean-toolchain - see the comment in
-# post-create.sh for why (gitpkg.vercel.app 402 error, fixed in lean4game PR #431).
+# Pin to commit 7f6e045 (PR #431, "replace gitpkg.vercel.app dependencies"),
+# NOT `main` and NOT the v4.23.0 tag. The tag predates PR #431 and still hits
+# the dead gitpkg.vercel.app dependency (402 error). `main` has the fix but
+# has since been through three Lean toolchain bumps (v4.26.0/v4.28/v4.29.1/
+# v4.31.0) that our pinned .lake/packages/GameServer (also at the v4.23.0-era
+# commit) doesn't speak — that skew is what made `$/lean/rpc/connect` hang
+# forever (diagnostics kept working since that's core LSP, but the
+# GameServer-specific widget/rpc protocol had drifted). Commit 7f6e045 is the
+# single commit with the gitpkg fix from BEFORE the first toolchain bump
+# (76e7d7f, 7 hours later) — the one point in history compatible with both.
+# See PATH_FIX_TRACE.md for details.
 if [ ! -d "$LEAN4GAME_DIR" ]; then
-  echo "lean4game not cloned yet — cloning main..."
-  git clone --branch main --depth 1 \
-    https://github.com/leanprover-community/lean4game.git "$LEAN4GAME_DIR"
+  echo "lean4game not cloned yet — fetching pinned commit 7f6e045..."
+  git init "$LEAN4GAME_DIR"
+  git -C "$LEAN4GAME_DIR" remote add origin https://github.com/leanprover-community/lean4game.git
+  git -C "$LEAN4GAME_DIR" fetch --depth 1 origin 7f6e04520cfce9fd19c649af718c36ea04ea1a0e
+  git -C "$LEAN4GAME_DIR" checkout FETCH_HEAD
 fi
 
 # ── Patch lean4game for POSIX path normalization ──
