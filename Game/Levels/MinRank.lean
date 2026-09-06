@@ -39,6 +39,6 @@ You will formalize:
 
 ### Prerequisites
 
-Complete the Tutorial, Classical Ciphers, Modular Arithmetic, and Matrix Algebra
-Worlds first.
+Complete Matrix Algebra World first (which itself needs the Number Theory
+Exam, and transitively everything before it).
 "

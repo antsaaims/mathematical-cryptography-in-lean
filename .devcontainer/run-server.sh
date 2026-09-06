@@ -39,8 +39,24 @@ if [ ! -f "$LEAN4GAME_DIR/client/dist/index.html" ]; then
   cd "$LEAN4GAME_DIR"
   rm -rf node_modules
   npm install
+
+  # Re-run the path patch now that node_modules exists: one of the patches
+  # targets node_modules/vscode directly (the load-bearing fix for the
+  # backslash-path crash) and has no effect until npm install has run.
+  bash "$GAME_DIR/scripts/fix-game-paths.sh" || true
+
   npm run build
 fi
 
 cd "$LEAN4GAME_DIR"
+# The relay (relay/src/index.ts) does `const PORT = process.env.PORT || 8080`
+# — if a `PORT` env var happens to be set (e.g. by a preview/launch harness
+# that injects PORT to match the app's advertised port, which here is 3000,
+# the client's port, not the relay's), the relay tries to bind the same
+# port the client's vite dev server already owns and crashes with
+# EADDRINUSE instead of falling back to its own default of 8080. Unset it
+# so the relay always uses its real port regardless of what invoked this
+# script; the client's own port (3000) comes from its own vite config, not
+# this env var, so this is safe.
+unset PORT
 exec npm start

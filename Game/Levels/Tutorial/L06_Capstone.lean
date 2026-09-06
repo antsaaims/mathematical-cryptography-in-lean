@@ -11,8 +11,10 @@ Introduction
 "
 ## Capstone Level
 
-In this capstone, you combine everything you have learned: `rw`, `exact`, `apply`,
-`simp`, and `ring`.
+This capstone puts your Tutorial toolkit — `rw`, `exact`, `apply`, `simp`,
+and `ring` — to work on a cryptographically-motivated identity, though this
+particular proof only needs one of them; the rest keep proving useful
+throughout the rest of this course.
 
 ### Cryptographic Motivation
 
@@ -58,5 +60,3 @@ MinRank.
 synthesis, though the real Schema-level capstones start once each world has its
 own object of study.
 "
-
-NewTactic rw exact apply simp ring

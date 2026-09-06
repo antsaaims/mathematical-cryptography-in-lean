@@ -26,8 +26,9 @@ and scalar `lambda`.
 ### Strategy
 
 1. `rw` to simplify `0 * A` to `0` using `zero_smul`.
-2. `rw` to simplify `lambda * A + 0` to `lambda * A` using `add_zero`.
-3. Close with `rfl`.
+2. `rw` to simplify `lambda * A + 0` to `lambda * A` using `add_zero` — this
+   closes the goal outright, since `rw` finishes automatically once both
+   sides match exactly.
 "
 
 Statement {F : Type} [Field F] {m n : ℕ}

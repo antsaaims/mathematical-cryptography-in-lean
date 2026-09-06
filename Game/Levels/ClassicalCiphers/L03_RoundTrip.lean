@@ -42,4 +42,6 @@ Conclusion
 This is the **Process** stage: instead of performing the action of
 encrypting-then-decrypting on one letter, you interiorized it into a single
 reusable rule that Lean now knows holds for every letter and every key.
+
+**APOS stage:** Process — a general law, proved once for all inputs.
 "

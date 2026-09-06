@@ -26,7 +26,9 @@ Prove that if lambda = 0, then det(lambda * A) = 0.
 
 1. Rewrite the hypothesis h : lambda = 0 into the goal.
 2. Simplify `0 * A` to `0`.
-3. Use `Matrix.det_zero` to show det(0) = 0.
+3. Use `Matrix.det_zero` to show det(0) = 0 — this needs the matrix to be
+   nonempty (a 0x0 matrix has determinant 1, not 0, by convention), which
+   is exactly what the `[NeZero n]` requirement below supplies.
 "
 
 Statement {F : Type} [Field F] {n : ℕ} [NeZero n]
@@ -49,5 +51,3 @@ low rank.
 
 **APOS stage:** Action — a short, explicit chain of mechanical steps.
 "
-
-NewDefinition Matrix.det

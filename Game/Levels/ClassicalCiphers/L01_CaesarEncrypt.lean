@@ -45,6 +45,8 @@ Conclusion
 You just performed your first Caesar-cipher encryption in Lean. Every step of
 a cipher, no matter how classical, is ultimately just arithmetic — and
 arithmetic is exactly what a proof assistant can check for you.
+
+**APOS stage:** Action — a single, concrete, decidable computation.
 "
 
 NewTactic decide

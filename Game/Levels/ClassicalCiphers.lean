@@ -2,7 +2,9 @@ import Game.Levels.ClassicalCiphers.L01_CaesarEncrypt
 import Game.Levels.ClassicalCiphers.L02_CaesarDecrypt
 import Game.Levels.ClassicalCiphers.L03_RoundTrip
 import Game.Levels.ClassicalCiphers.L04_ShiftComposition
-import Game.Levels.ClassicalCiphers.L05_Capstone
+import Game.Levels.ClassicalCiphers.L05_Substitution
+import Game.Levels.ClassicalCiphers.L06_Vigenere
+import Game.Levels.ClassicalCiphers.L07_Capstone
 
 World "ClassicalCiphers"
 Title "Classical Ciphers World"
@@ -23,7 +25,10 @@ and subtraction in this modular world.
 You will:
 1. Encrypt and decrypt concrete letters by hand (Action).
 2. Prove the general encrypt-decrypt law holds for every message and key (Process).
-3. Treat a 'shift' as an algebraic object you can combine and commute (Object).
+3. Treat a 'shift' as an algebraic object you can combine and commute, then
+   generalize from a single shift to any permutation of the alphabet
+   (Substitution) and to a whole sequence of shifts keyed by position
+   (Vigenère) (Object).
 4. Prove the Caesar cipher is a genuine bijection: a capstone Schema tying
    actions, processes, and objects together (Schema).
 

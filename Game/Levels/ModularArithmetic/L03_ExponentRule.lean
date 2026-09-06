@@ -43,4 +43,6 @@ This is the **Process** stage: instead of checking `g ^ (a*b) = (g^a)^b` for
 one `g`, `a`, `b` at a time, you now have a single reusable rule that Lean
 (via Mathlib) has already established for every commutative ring element and
 every pair of natural-number exponents.
+
+**APOS stage:** Process — a general exponent law, reused as a black-box tool.
 "

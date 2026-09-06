@@ -40,11 +40,11 @@ if [ ! -d "$LEAN4GAME_DIR" ]; then
 fi
 
 # ── Patch lean4game for POSIX path normalization ──
-# path-browserify (used by the client bundle) picks separators based on
+# vscode's own internal path utilities pick separators based on
 # process.platform. This patch ensures forward slashes are always used,
-# preventing NoPermissions errors on Linux/Codespaces. Must run AFTER the
-# clone above: it patches ../lean4game (what actually gets built into the
-# served client), not just the .lake/packages/GameServer Lean dependency.
+# preventing NoPermissions errors. Must run AFTER the clone above: it patches
+# ../lean4game (what actually gets built into the served client), not just
+# the .lake/packages/GameServer Lean dependency.
 # See PATH_FIX_TRACE.md for full documentation.
 bash "$VSCODE_PWD/scripts/fix-game-paths.sh" || true
 
@@ -55,6 +55,14 @@ export VITE_LEAN4GAME_SINGLE_NAME=$(basename "$VSCODE_PWD")
 cd "$LEAN4GAME_DIR"
 rm -rf node_modules
 npm install
+
+# ── Re-run the path patch now that node_modules exists ──
+# One of the patches targets node_modules/vscode directly (the load-bearing
+# fix for the backslash-path crash), so it has no effect until npm install
+# has populated node_modules. Re-running is safe/idempotent for the other
+# patches (they just report SKIP already-patched).
+bash "$VSCODE_PWD/scripts/fix-game-paths.sh" || true
+
 npm run build
 
 echo "=== post-create.sh completed ==="

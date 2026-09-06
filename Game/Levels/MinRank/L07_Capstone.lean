@@ -52,29 +52,52 @@ Conclusion
 You just proved the **MinRank key identity**: if a matrix A is singular
 (det(A) = 0), then any scalar multiple lambda * A is also singular.
 
-This is the algebraic foundation of MinRank attacks:
-- The attacker searches for lambda_i making Sum lambda_i M_i singular.
-- If the target combination has a singular component, the scalar multiples
-  preserve singularity.
-- The determinant becomes a polynomial in the lambda_i, and finding its roots
-  solves the MinRank instance.
+Here is precisely why this is an attack, not just an algebra fact. Recall
+from UOV World that a multivariate scheme's central map is, per output
+coordinate, a quadratic map built from a bilinear map — in coordinates, a
+matrix (`B.toQuadraticMap x = B x x`). A public key made of `m` such
+quadratic forms therefore comes with `m` matrices, `M_1, ..., M_m`, one per
+output coordinate. For schemes built like **HFE** (Hidden Field Equations),
+the *secret* structure forces some linear combination `lambda_1 M_1 + ... +
+lambda_m M_m` of those matrices to have unusually low rank — an accident
+that would essentially never happen for `m` genuinely random matrices.
 
-## What You Have Learned
+**MinRank attacks** search for exactly that combination:
+- The attacker searches for lambda_i making `Sum lambda_i M_i` singular
+  (or low-rank).
+- Finding it recovers information about the secret structure the scheme
+  was trying to hide.
+- The determinant (or the vanishing of low-order minors) becomes a
+  polynomial condition in the lambda_i, turning key recovery into solving
+  a system of polynomial equations.
 
-Across all six worlds, you have:
-1. Mastered the core Lean tactics: `rw`, `exact`, `apply`, `simp`, `ring`, `decide`, `unfold`.
-2. Formalized classical ciphers and modular arithmetic, including why
-   Diffie-Hellman key exchange is correct.
-3. Worked with matrices, determinants, transposes, and submatrices in Mathlib.
-4. Proved the correctness of the UOV signature scheme.
-5. Formalized key identities underlying the MinRank and Support-Minor models.
+Both sources behind this world agree on this precise mechanism
+independently: Ding and Petzoldt's survey describes MinRank as searching
+for 'a linear combination of the quadratic forms... of low rank,' and
+Varjabedian's 2026 thesis (Ch. 3.2.1, 'Key recovery attacks with MinRank')
+gives the same account for HFE specifically — and adds a striking
+historical note: one particular MinRank variant ('MinRank S') wasn't found
+until years after the schemes it attacks were already designed, and its
+discovery broke GeMSS, an HFE-based scheme submitted to NIST's post-quantum
+competition (and eliminated because of exactly this kind of attack) — a
+genuinely counter-intuitive result the thesis itself highlights as
+surprising.
 
-You are now equipped to read and write research-grade Lean 4 / Mathlib proofs in
-algebraic cryptography. Well done!
+## What This World Covered
+
+You have formalized the key algebraic identity behind MinRank attacks —
+scaling a singular matrix keeps it singular — and, in the level before this
+one, the concrete determinant-of-a-submatrix mechanics the Support-Minor
+model builds on. MinRank World stands on Matrix Algebra World alone; if
+you reached this Conclusion without playing UOV World, that's by design —
+they're independent tracks, not a sequence.
+
+**MinRank World is complete.** If UOV World and the Public-Key Exam are
+also done, the **Final Exam** is unlocked, and interleaves this world's
+central identity with every other track's tools. If not, those are worth
+finishing before this course is genuinely done.
 
 **APOS stage:** Schema — synthesizing the Action (Level 1-2), Process (Level 3-4),
 and Object (Level 5-6) material from this entire world into the single identity
 that powers MinRank attacks.
 "
-
-NewDefinition Matrix.det

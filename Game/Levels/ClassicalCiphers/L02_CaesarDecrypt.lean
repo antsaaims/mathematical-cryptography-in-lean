@@ -36,4 +36,6 @@ Conclusion
 Encryption adds a shift, decryption subtracts it. Individually, these are two
 one-off checks — in the next level we will see that this always works, for
 *any* message and *any* shift, not just these two numbers.
+
+**APOS stage:** Action — a second concrete, decidable computation.
 "

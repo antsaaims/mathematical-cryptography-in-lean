@@ -43,4 +43,7 @@ Treating 'the shift' as an object you can commute and combine — rather than
 just a step you perform — is what lets us later reason about *keys* and
 *exponents* as first-class algebraic objects, which is exactly what modular
 arithmetic and Diffie–Hellman need.
+
+**APOS stage:** Object — a shift treated as a value you combine, not a step
+you merely execute.
 "

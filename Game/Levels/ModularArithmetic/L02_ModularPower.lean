@@ -37,4 +37,6 @@ Conclusion
 Small numbers here, but real Diffie–Hellman and RSA implementations perform
 exactly this operation on numbers hundreds of digits long — computed
 efficiently by *fast* exponentiation, never one multiplication at a time.
+
+**APOS stage:** Action — a second concrete, decidable computation.
 "

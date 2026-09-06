@@ -3,3 +3,9 @@ lake-packages/
 .lake/
 **/.DS_Store
 .i18n/**/*.mo
+.claude/
+
+# Copyrighted reference PDFs kept locally for course-development use only.
+# They are not ours to redistribute; RESOURCES.md lists free/official links
+# to the same material instead.
+Resources (open access, free on the web)/

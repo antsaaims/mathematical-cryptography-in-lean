@@ -1,6 +1,7 @@
 import Game.Metadata
 import Mathlib.Data.Matrix.Basic
 import Mathlib.LinearAlgebra.Matrix.Defs
+import Mathlib.LinearAlgebra.Matrix.Determinant.Basic
 import Mathlib.Tactic.Common
 
 World "MinRank"
@@ -12,8 +13,9 @@ Introduction
 "
 ## Support-Minor Model
 
-The **Support-Minor** model extends MinRank by working with minors directly.
-The key insight is:
+The **Support-Minor** model extends MinRank by working with minors directly —
+recall from Level 4 that a minor is the determinant of a (usually smaller)
+square submatrix. The key insight is:
 
 If rank(M) <= r, then all (r+1) x (r+1) minors of M are zero.
 
@@ -22,28 +24,30 @@ then rank(M) <= r.
 
 ### Your Task
 
-Prove the base case: the zero matrix is its own submatrix (up to the selection
-functions), establishing that zero matrices have trivially zero minors.
-
-Prove that `(0 : Matrix).submatrix r c = 0`.
+Prove the base case: *every* square minor of the zero matrix — of any size
+`k`, cut out by any row/column selectors `r`, `c` — is `0`.
 
 ### Strategy
 
-Use `Matrix.submatrix_zero` which states that the submatrix of a zero matrix
-is the zero matrix.
+First reduce the submatrix of a zero matrix to the zero matrix
+(`Matrix.submatrix_zero`), then use the fact that a zero matrix has
+determinant `0` (`Matrix.det_zero`, the same lemma from Level 2 — it needs
+the k x k block to be nonempty, which `[NeZero k]` supplies).
 "
 
-Statement {F : Type} [Field F] {m n m' n' : ℕ}
-    (r : Fin m' → Fin m) (c : Fin n' → Fin n) :
-    (0 : Matrix (Fin m) (Fin n) F).submatrix r c = 0 := by
-  Hint "The submatrix of a zero matrix is zero. Use `Matrix.submatrix_zero`."
-  Hint "Type: rfl"
-  rfl
+Statement {F : Type} [Field F] {n k : ℕ} [NeZero k]
+    (r c : Fin k → Fin n) :
+    ((0 : Matrix (Fin n) (Fin n) F).submatrix r c).det = 0 := by
+  Hint "First reduce the submatrix of the zero matrix to the zero matrix. Type: rw [Matrix.submatrix_zero]"
+  rw [Matrix.submatrix_zero]
+  Hint "Now use the fact that a (nonempty) zero matrix has determinant zero, exactly as in Level 2. Type: simp [Matrix.det_zero]"
+  simp [Matrix.det_zero]
 
 Conclusion
 "
-The zero matrix has all zero submatrices, hence all zero minors. This is the
-trivial case of the Support-Minor principle.
+The zero matrix has all zero minors, at every size `k` — the trivial case of
+the Support-Minor principle, but now stated the way the theory actually uses
+it: as a fact about *determinants of submatrices*, not just submatrices.
 
 In the non-trivial case, the attacker searches for linear combinations of public-key
 matrices whose minors vanish — revealing the secret key structure.

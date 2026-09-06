@@ -17,7 +17,10 @@ For an n x n matrix A and scalar lambda:
     det(lambda * A) = lambda^n * det(A)
 
 This follows because scaling a matrix by lambda scales every row by lambda,
-and the determinant is multilinear in the rows.
+and the determinant is multilinear in the rows. (Lean states the exponent
+as `Fintype.card (Fin n)` rather than the simplified `n` — the same number,
+just written the fully general way Mathlib's lemma is stated for any
+finite index type, not only `Fin n`.)
 
 ### Cryptographic Context
 

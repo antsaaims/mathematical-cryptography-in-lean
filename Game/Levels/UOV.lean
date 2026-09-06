@@ -1,10 +1,14 @@
-import Game.Levels.UOV.L01_LinearMap
-import Game.Levels.UOV.L02_Quadratic
-import Game.Levels.UOV.L03_Composition
-import Game.Levels.UOV.L04_Invertible
-import Game.Levels.UOV.L05_PublicKey
-import Game.Levels.UOV.L06_Verification
-import Game.Levels.UOV.L07_Capstone
+import Game.Levels.UOV.L01_QuadraticFromMatrix
+import Game.Levels.UOV.L02_LinearMap
+import Game.Levels.UOV.L03_Quadratic
+import Game.Levels.UOV.L04_Composition
+import Game.Levels.UOV.L05_Invertible
+import Game.Levels.UOV.L06_PublicKey
+import Game.Levels.UOV.L07_Verification2
+import Game.Levels.UOV.L08_Verification
+import Game.Levels.UOV.L09_QRUOV
+import Game.Levels.UOV.L10_InvertibleProportion
+import Game.Levels.UOV.L11_Capstone
 
 World "UOV"
 Title "UOV World"
@@ -37,12 +41,21 @@ P(sigma) = F(S(sigma)).
 
 ### This World
 
-You will prove the correctness of UOV step by step, from linear maps through
-quadratic forms to the full verification identity.
+You will prove the correctness of UOV step by step, starting from what
+'quadratic' actually means (as opposed to linear), through linear maps,
+composition, and invertibility, to the full verification identity — then
+go further than a first course usually does: a 2026 NIST-competition
+variant (QR-UOV), an invertibility fact real threshold protocols depend on,
+and a capstone connecting this world back to Secret Sharing World's
+mathematics.
 
 ### Prerequisites
 
-Complete the Tutorial, Classical Ciphers, Modular Arithmetic, and Matrix Algebra
-Worlds first — UOV combines the modular exponentiation ideas from Modular
-Arithmetic World with the linear and quadratic maps from Matrix Algebra World.
+Complete both Matrix Algebra World and the Secret Sharing Exam first — the
+engine that runs this game unlocks a whole world at a time, and this
+world's final capstone (Level 11) needs Secret Sharing World's Lagrange
+interpolation, so the whole world waits on it, not just that one level.
+Secret Sharing itself is an independent track: play it before Matrix
+Algebra, after, or interleaved — it doesn't matter, as long as both are
+done before you start here.
 "

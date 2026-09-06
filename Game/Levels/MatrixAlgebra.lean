@@ -1,9 +1,11 @@
 import Game.Levels.MatrixAlgebra.L01_MatrixMul
-import Game.Levels.MatrixAlgebra.L02_Det
-import Game.Levels.MatrixAlgebra.L03_Rank
-import Game.Levels.MatrixAlgebra.L04_Transpose
-import Game.Levels.MatrixAlgebra.L05_Submatrix
-import Game.Levels.MatrixAlgebra.L06_Capstone
+import Game.Levels.MatrixAlgebra.L02_OldToolsNewDomain
+import Game.Levels.MatrixAlgebra.L03_Det
+import Game.Levels.MatrixAlgebra.L04_DetMultiplicative
+import Game.Levels.MatrixAlgebra.L05_Transpose
+import Game.Levels.MatrixAlgebra.L06_Submatrix
+import Game.Levels.MatrixAlgebra.L07_Rank
+import Game.Levels.MatrixAlgebra.L08_Capstone
 
 World "MatrixAlgebra"
 Title "Matrix Algebra World"
@@ -28,5 +30,6 @@ exploit as a cryptographic trapdoor.
 
 ### Prerequisites
 
-Complete the Tutorial, Classical Ciphers, and Modular Arithmetic Worlds first.
+Complete the Number Theory Exam first (which itself needs everything from
+Tutorial World through Groups and Orders World).
 "

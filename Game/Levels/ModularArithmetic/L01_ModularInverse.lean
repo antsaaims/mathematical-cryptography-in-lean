@@ -38,4 +38,6 @@ Conclusion
 Multiplicative inverses are what let you 'divide' inside `ZMod n` even though
 there's no division operator — and RSA decryption is fundamentally about
 finding the right inverse exponent.
+
+**APOS stage:** Action — a single, concrete, decidable computation.
 "

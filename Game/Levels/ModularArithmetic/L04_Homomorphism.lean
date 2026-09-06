@@ -43,4 +43,7 @@ This structural property — that exponentiation respects multiplication — is
 exactly why textbook RSA is *malleable*: an attacker who can manipulate
 ciphertexts multiplicatively can manipulate the underlying plaintexts too.
 Real systems add padding schemes specifically to break this property.
+
+**APOS stage:** Object — treating 'raise to the e-th power' as a single
+structural map, not just a computation to repeat.
 "
