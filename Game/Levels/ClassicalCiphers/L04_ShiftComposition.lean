@@ -18,8 +18,7 @@ its own right — an element of a commutative group that can itself be added,
 combined, and reasoned about independently of any particular letter it acts
 on.
 
-A **Vigenère cipher** applies a whole sequence of Caesar shifts (one per
-letter of a repeating keyword). If you ever apply two independent shifts to
+If you ever apply two independent shifts to
 the same position, one after another, does the order matter?
 
 ### Your Task
